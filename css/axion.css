@@ -21,13 +21,8 @@ body {
   position: relative;
   background-color: #000;
   overflow: hidden;
-
-  /*background: url(../img/cover.png) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;*/
 }
+
 #topVid {
 	position: fixed;
     top: -9999px;
@@ -49,6 +44,33 @@ body {
 	height: auto;
 	z-index: -1;
 }
+
+#topNav {
+	font-size: 18px;
+	color: #999;
+	height: auto;
+	width: auto;
+	position: fixed;
+	top: 100%;
+	left: 2%;
+	/*margin-top: -36px; Will be good for smaller screen*/
+	margin-top: -50px;
+}
+
+#topNav .glyphicon {
+	display: inline-block;
+	padding: 4px;
+}
+
+#topNav a {
+	color: #999;
+}
+
+ #topNav a:hover {
+	color: #333;
+}
+
+
 
 #nav.affix {
     position: fixed;
