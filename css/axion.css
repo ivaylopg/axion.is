@@ -93,6 +93,7 @@ body {
 	height: 25%;
 	background-color:rgb(100,100,100);
 	padding: 2% 10% 2% 10%;
+	z-index: 4;
 }
 
 .slide {
@@ -132,8 +133,10 @@ body {
 }
 
 .slide3 {
+	height: 70%;
 	background-image: url(../img/03.png);
 	padding: 20% 15% 5% 45%;
+	z-index: 3;
 }
 
 .slide3 p {
