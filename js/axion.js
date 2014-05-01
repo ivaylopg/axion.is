@@ -1,6 +1,20 @@
 var s = skrollr.init({
     forceHeight: false,
     smoothScrolling: false,
+    constants: {
+        blogTop: function() {
+            return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+        },
+        blogBottom: function() {
+            return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
+        },
+        blogHeight: function() {
+            var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+            var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
+            console.log(b);
+            return b - t;
+        }
+    },
     easing: {
         easeInQuad: function (p) { return p*p },
         easeOutQuad: function (p) { return p*(2-p) },
@@ -33,6 +47,7 @@ $("#topNav a").click(function( event ) {
 $(document).ready(function () {
 
     var headSize = $('.header').height();
+    var whichPic = 1;
 
 
     $('#nav').affix({
@@ -44,6 +59,39 @@ $(document).ready(function () {
 
     $(".vidCover").on("play", function(){
         $(this).attr("poster","");
+    });
+
+    $(window).scroll(function(){
+
+        var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+        var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+
+        var maxPics = 29;
+        var value = (posFromTop/totHeight) * maxPics;
+        var picNo = 1;
+        if (Math.ceil(value) <= 0) {
+            picNo = 1;
+        } else if (Math.ceil(value) > 0 && Math.ceil(value) <= maxPics){
+            picNo = Math.ceil(value);
+        } else {
+            picNo = maxPics;
+        }
+
+        if (picNo != whichPic) {
+            whichPic = picNo;
+
+            var picSrc = "img/bgseq/" + picNo + ".jpg";
+            $('#tunnelImg').attr("src",picSrc);
+
+            //var picSrc = "url(img/bgseq/" + picNo + ".jpg)";
+            //$('.slideB').css("background-image",picSrc);
+        }
+        
+        
+        
+        
+        //console.log(picSrc);
+        //console.log(picNo);
     });
 
 });
