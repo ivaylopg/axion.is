@@ -91,7 +91,7 @@ body {
 	position: relative;
 	width: 100%;
 	height: 25%;
-	background-color: #ddd;
+	background-color:rgb(100,100,100);
 	padding: 2% 10% 2% 10%;
 }
 
@@ -131,6 +131,38 @@ body {
 .slide2 p {
 }
 
+.slide3 {
+	background-image: url(../img/03.png);
+	padding: 20% 15% 5% 45%;
+}
+
+.slide3 p {
+}
+
+.slideB {
+	color: #fdd;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 300%;
+	background-position: 50% 0%;
+	background-image: url(../img/bgseq/1.jpg);
+	background-size: 100% auto;
+	padding: 20% 15% 5% 45%;
+}
+
+.slideB p {
+}
+
+
+.footer {
+	color: #fff;
+	background-color: #1a1a1a;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 30%;
+}
 
 
 

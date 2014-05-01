@@ -9,7 +9,8 @@
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--Custom CSS-->
-      <link href="css/axion.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/axion.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -22,16 +23,17 @@
 
     <div class="header" data-0p="opacity: 1" data-100p="opacity: 0" data-smooth-scrolling="on">
           <video id="topVid" autoplay loop muted preload="auto" id="intro" class="vidCover" poster="img/cover.png">
-            <!--<source src="mov/intro.webm" type="video/webm">-->
             <source src="mov/intro.mp4" type="video/mp4">
+            <source src="mov/intro.webm" type="video/webm">
           </video>
           <img id="topImg" src="img/cover.png" />
-          <div id="topNav"><a href="#info"><span class="glyphicon glyphicon-info-sign"></span></a>&nbsp;<a href="#"><span class="glyphicon glyphicon-envelope"></span></a>&nbsp;<a href="#"><span class="glyphicon glyphicon-cloud-download"></span></a></div>
+          <div id="topNav"><a href="#info"><span class="glyphicon glyphicon-info-sign"></span></a>&nbsp;<a href="#who"><span class="glyphicon glyphicon-user"></span></a>&nbsp;<a href="#contact"><span class="glyphicon glyphicon-envelope"></span></a>&nbsp;<a href="#contact"><span class="glyphicon glyphicon-cloud-download"></span></a></div>
+          <!--<div id="topNav"><a href="#info"><i class="fa fa-info-circle fa-fw"></i></a>&nbsp;<a href="#who"><i class="fa fa-users fa-fw"></i></a>&nbsp;<a href="#"><i class="fa fa-envelope fa-fw"></i></a>&nbsp;<a href="#"><i class="fa fa-cloud-download fa-fw"></i></a></div>-->
     </div>
+<!--glyphicon glyphicon-download-alt || glyphicon glyphicon-user-->
 
-
-<div class="quote">
-  <div data-bottom-top="opacity: 0" data-25p-top="opacity: 1" data-smooth-scrolling="on">
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="on">
+  <div data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="on">
     <p>
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
     totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
@@ -40,17 +42,6 @@
   </div>
 </div>
 
-<!-- Begin Navbar 
-<div id="nav">
-  <div class="navbar navbar-inverse navbar-static-top">
-    <div class="container">
-      <a href="#" class="navbar-brand">Brand</a>
-      <a href="#" class="navbar-brand">Brand</a>
-      <a href="#" class="navbar-brand">Brand</a>
-      </div>    
-    </div>
-  </div>
-<!-- /.navbar -->
 <div id="info" class="slide slide1" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
   <p>
   An exploration of the transformation of matter and its relationship to human metamorphosis. It is a fundamental law that matter can neither be created nor destroyed, only transformed. Both matter and mind occupy many states, some of which remain impenetrable. We present the user with a meditative visual progression, each stage a metaphor for a state of mind and matter. While this loop repeats several times, the sequence of the states of mind/matter is affected by the user's biometric feedback. The content of each element evolves and tells the story of dark matter research. We blend visual poetry and authentic scientific language, illuminating the creative and speculative nature of dark matter theories. We leave the participant not with answers, but with a sense that it is necessary to be uncertain - that science is not the source of ultimate answers, but rather the discovery of new questions.
@@ -59,8 +50,8 @@
   </p>
 </div>
 
-<div class="quote">
-  <div data-bottom-top="opacity: 0" data-25p-top="opacity: 1" data-smooth-scrolling="on">
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="on">
+  <div data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="on">
     <p>
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
     totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
@@ -69,12 +60,52 @@
   </div>
 </div>
 
-<div class="slide slide2" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
+<div id="who" class="slide slide2" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
   <p>
   An exploration of the transformation of matter and its relationship to human metamorphosis. It is a fundamental law that matter can neither be created nor destroyed, only transformed. Both matter and mind occupy many states, some of which remain impenetrable. We present the user with a meditative visual progression, each stage a metaphor for a state of mind and matter. While this loop repeats several times, the sequence of the states of mind/matter is affected by the user's biometric feedback. The content of each element evolves and tells the story of dark matter research. We blend visual poetry and authentic scientific language, illuminating the creative and speculative nature of dark matter theories. We leave the participant not with answers, but with a sense that it is necessary to be uncertain - that science is not the source of ultimate answers, but rather the discovery of new questions.
   <br /><br />
   A° (Axion) is an app-based individualized experience developed at the Tribeca Hacks Story Matter Hackathon at CERN, March 2014. Currently we are in the prototype phase. Stay tuned here for updates.
   </p>
+</div>
+
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="on">
+  <div data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="on">
+    <p>
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
+    </p>
+  </div>
+</div>
+
+<div id="blog" class="slide slideB">
+  <p>
+  An exploration of the transformation of matter and its relationship to human metamorphosis. It is a fundamental law that matter can neither be created nor destroyed, only transformed. Both matter and mind occupy many states, some of which remain impenetrable. We present the user with a meditative visual progression, each stage a metaphor for a state of mind and matter. While this loop repeats several times, the sequence of the states of mind/matter is affected by the user's biometric feedback. The content of each element evolves and tells the story of dark matter research. We blend visual poetry and authentic scientific language, illuminating the creative and speculative nature of dark matter theories. We leave the participant not with answers, but with a sense that it is necessary to be uncertain - that science is not the source of ultimate answers, but rather the discovery of new questions.
+  <br /><br />
+  A° (Axion) is an app-based individualized experience developed at the Tribeca Hacks Story Matter Hackathon at CERN, March 2014. Currently we are in the prototype phase. Stay tuned here for updates.
+  </p>
+</div>
+
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="on">
+  <div data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="on">
+    <p>
+    Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae 
+    dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit
+    </p>
+  </div>
+</div>
+
+<div id="contact" class="slide slide3" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
+  <p>
+  An exploration of the transformation of matter and its relationship to human metamorphosis. It is a fundamental law that matter can neither be created nor destroyed, only transformed. Both matter and mind occupy many states, some of which remain impenetrable. We present the user with a meditative visual progression, each stage a metaphor for a state of mind and matter. While this loop repeats several times, the sequence of the states of mind/matter is affected by the user's biometric feedback. The content of each element evolves and tells the story of dark matter research. We blend visual poetry and authentic scientific language, illuminating the creative and speculative nature of dark matter theories. We leave the participant not with answers, but with a sense that it is necessary to be uncertain - that science is not the source of ultimate answers, but rather the discovery of new questions.
+  <br /><br />
+  A° (Axion) is an app-based individualized experience developed at the Tribeca Hacks Story Matter Hackathon at CERN, March 2014. Currently we are in the prototype phase. Stay tuned here for updates.
+  </p>
+</div>
+
+<div class="footer">
+
 </div>
 
 
@@ -86,6 +117,11 @@
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
