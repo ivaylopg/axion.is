@@ -64,14 +64,64 @@ $(document).ready(function () {
             }
           }
         });
+
+        clip2 = soundManager.createSound({
+          id: 'bSound',
+          url: 'audio/rain.mp3',
+          multiShot: false,
+          onfinish: function() {
+            playDrawer(2,0);
+            togglePlayPause("#clip2",true);
+          },
+          whileplaying: function() {
+            if(this.readyState==3) {
+                var prog = (this.position / this.duration) * 100;
+                playDrawer(2,prog);
+            }
+          }
+        });
+
+        clip3 = soundManager.createSound({
+          id: 'cSound',
+          url: 'audio/going_outside.mp3',
+          multiShot: false,
+          onfinish: function() {
+            playDrawer(3,0);
+            togglePlayPause("#clip3",true);
+          },
+          whileplaying: function() {
+            if(this.readyState==3) {
+                var prog = (this.position / this.duration) * 100;
+                playDrawer(3,prog);
+            }
+          }
+        });
+
+        clip4 = soundManager.createSound({
+          id: 'dSound',
+          url: 'audio/bass.mp3',
+          multiShot: false,
+          onfinish: function() {
+            playDrawer(4,0);
+            togglePlayPause("#clip4",true);
+          },
+          whileplaying: function() {
+            if(this.readyState==3) {
+                var prog = (this.position / this.duration) * 100;
+                playDrawer(4,prog);
+            }
+          }
+        });
         clip1.load();
-        //redraw players?
+        clip2.load();
+        clip3.load();
+        clip4.load();
         $('.quote').css("padding","2% 10% 2% 20%");
         $('.quotePlay').css("visibility","visible");
       },
       ontimeout: function() {
-        // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
-        // get rid of players?
+        $('.quote').css("padding","2% 10% 2% 10%");
+        $('.quotePlay').css("visibility","hidden");
       }
     });
 
@@ -94,6 +144,7 @@ $(document).ready(function () {
                 } else {
                     clip2.togglePause();
                 }
+                togglePlayPause("#"+w,clip2.paused);
                 break;
             case "clip3":
                 if(clip3.playState != 1) {
@@ -101,6 +152,15 @@ $(document).ready(function () {
                 } else {
                     clip3.togglePause();
                 }
+                togglePlayPause("#"+w,clip3.paused);
+                break;
+            case "clip4":
+                if(clip4.playState != 1) {
+                    clip4.play();    
+                } else {
+                    clip4.togglePause();
+                }
+                togglePlayPause("#"+w,clip4.paused);
                 break;
         }
     });
@@ -125,8 +185,19 @@ $(document).ready(function () {
                     .trigger('change');
                 break;
             case 2:
+                $('#dial2')
+                    .val(pc)
+                    .trigger('change');
                 break;
             case 3:
+                $('#dial3')
+                    .val(pc)
+                    .trigger('change');
+                break;
+            case 4:
+                $('#dial4')
+                    .val(pc)
+                    .trigger('change');
                 break;
         }
     }
