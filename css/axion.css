@@ -263,10 +263,57 @@ p {
 }
 
 #blogContent {
-	position: relative;
+	position: absolute;
 	background-color: rgba(0,0,0,0.8);
 	padding: 20px;
 	z-index: 2;
+	margin: 0% 45% 5% 15%;
+	z-index: 10;
+	top: 0px;
+	left: 0px;
+}
+
+.blogEntry {
+	/*
+	padding-left: 4%;
+	padding-right: 4%;
+	*/
+}
+
+.blogEntry .blogDate {
+	color: #fff;
+	font-weight: 300;
+	font-size: 130%;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.blogEntry .divider {
+	display: block;
+	width: 100%;
+	height: 2px;
+	background-color: #ccc;
+}
+
+.blogEntry .blogImg {
+	width: 100%;
+	height: auto;
+	padding: 4%;
+}
+
+.blogImg img {
+	width: 100%;
+	height: auto;
+}
+
+.blogEntry p {
+	padding-left: 2%;
+}
+.blogEntry a {
+	font-weight: 300;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	color: #aaa;
+	padding-right: 2%;
 }
 
 

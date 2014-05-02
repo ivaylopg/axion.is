@@ -3,36 +3,21 @@ $(document).ready(function () {
 
     // we still have to implement preload for the hallway!
 
-    //var headSize = $('.header').height();
 
-    // Blog Stuff
-
-    //$.getJSON("http://blog.ivaylogetov.com/api/read/json","jasoncallback=?&start=0&num=3", function () {console.log("BOOM");});
-
-    //http://blog.ivaylogetov.com/api/read/json?
-
-    //$.parseJSON(tumblr_api_read.posts[0]);
-    //alert( obj.name === "John" );
-    //console.log(tumblr_api_read.posts[0].photo-url-1280);
-    //console.log(tumblr_api_read.posts[0]);
-
-    //console.log(tumblr_api_read);
-
-    if (typeof tumblr_api_read !== 'undefined') {
-        console.log(tumblr_api_read.posts[0]);
-    } else {
-        console.log("UNDEFINED");
-    }
+    
 
     /*
-    $.getScript( "http://blowg.ivaylogetov.com/api/read/json?jasoncallback=?&start=0&num=3" )
-        .done(function(script, textStatus, jqXHR) {
-            console.log(tumblr_api_read.posts[0]);
-        })
-        .fail(function( jqxhr, settings, exception ) {
-            console.log("SHIT");
-    });
+    <div class="blogEntry">
+      <span class="blogDate">Sat, 26 Apr 2014 14:50:23</span>
+      <div class="divider"></div>
+      <div class="blogImg"><img src="http:\/\/24.media.tumblr.com\/8e014144038783b82b606bbd6d58d636\/tumblr_n4nizz80xj1qzyep5o1_1280.jpg" ></div>
+      <p>@ksiwoff exploring #axion during @tribecafilmins interactive day. #TFIi #Tribeca  (at IAC)</p>
+      <p><a href="http:\/\/blog.ivaylogetov.com\/post\/83937239727">permalink</a><a href="http://blog.ivaylogetov.com/tagged/tribeca">#tribeca</a><a href="http://blog.ivaylogetov.com/tagged/axion">#axion</a></p>
+      <p><br /><br />&nbsp;</p>
+    </div>
     */
+
+
 
     // start skrollr
     var s = skrollr.init({
@@ -67,6 +52,39 @@ $(document).ready(function () {
             easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
         }
     });
+
+
+    // Blog Stuff
+    if (typeof tumblr_api_read !== 'undefined') {
+        var blogData = "";
+
+        for (var i = 0; i < tumblr_api_read.posts.length; i++) {
+        //for (var i = 0; i < 1; i++) {
+            //console.log(tumblr_api_read.posts[i].date);
+            //$("#blogContent").append("<p>" + tumblr_api_read.posts[i].date + "</p>");
+            var post = '<div class="blogEntry"><span class="blogDate">' + tumblr_api_read.posts[i]["date"] + '</span><div class="divider"></div>';
+            post = post + '<div class="blogImg"><img src="' + tumblr_api_read.posts[i]["photo-url-1280"] + '" /></div>';
+            post = post + tumblr_api_read.posts[i]["photo-caption"];
+
+            post = post + '<p><a href="' + tumblr_api_read.posts[i]["url"] + '">permalink</a>';
+
+            if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
+                for (var j = 0; j < tumblr_api_read.posts[i]["tags"].length; j++) {
+                    post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
+                };
+            }
+            post = post + '</p><p><br /><br />&nbsp;</p></div>';
+            blogData = blogData + post;
+        };
+        $("#blogContent").html(blogData);
+        var pos = Math.floor($("#blog").offset().top) + "px";
+        $("#blogContent").css("top",pos);
+
+    } else {
+        console.log("UNDEFINED");
+    }
+
+
 
     // start SoundManager
     var clip1;
@@ -305,6 +323,14 @@ $(document).ready(function () {
             //console.log(picNo);
         }
     });
+
+    $(window).resize(function(){
+        var pos = Math.floor($("#blog").offset().top) + "px";
+        $("#blogContent").css("top",pos);
+    });
+
+    
+    
 
 });
 
