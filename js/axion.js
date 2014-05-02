@@ -39,13 +39,107 @@ $(document).ready(function () {
         }
     });
 
-    /*
-    $('#nav').affix({
-      offset: {
-        top: headSize
+    // start SoundManager
+    var clip1;
+    var clip2;
+    var clip3;
+
+    var sm = soundManager.setup({
+      url: '../swf/',
+      preferFlash: false,
+      waitForWindowLoad: true,
+      onready: function() {
+        clip1 = soundManager.createSound({
+          id: 'aSound',
+          url: 'audio/walking.mp3',
+          multiShot: false,
+          onfinish: function() {
+            playDrawer(1,0);
+            togglePlayPause("#clip1",true);
+          },
+          whileplaying: function() {
+            if(this.readyState==3) {
+                var prog = (this.position / this.duration) * 100;
+                playDrawer(1,prog);
+            }
+          }
+        });
+        clip1.load();
+        //redraw players?
+        $('.quote').css("padding","2% 10% 2% 20%");
+        $('.quotePlay').css("visibility","visible");
+      },
+      ontimeout: function() {
+        // Hrmm, SM2 could not start. Missing SWF? Flash blocked? Show an error, etc.?
+        // get rid of players?
       }
     });
-    */
+
+    $(".playbutton").click( function() {
+        var w = $(this).attr('id');
+        //console.log(w);
+
+        switch (w) {
+            case "clip1":
+                if(clip1.playState != 1) {
+                    clip1.play();    
+                } else {
+                    clip1.togglePause();
+                }
+                togglePlayPause("#"+w,clip1.paused);
+                break;
+            case "clip2":
+                if(clip2.playState != 1) {
+                    clip2.play();    
+                } else {
+                    clip2.togglePause();
+                }
+                break;
+            case "clip3":
+                if(clip3.playState != 1) {
+                    clip3.play();    
+                } else {
+                    clip3.togglePause();
+                }
+                break;
+        }
+    });
+
+    //$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
+
+    $(".dial").knob({
+                'readOnly':true,
+                'displayInput':false,
+                'thickness':0.2,
+                'fgColor':'#444444',
+                'bgColor':'#CCCCCC'
+                });
+
+
+    function playDrawer(id, pc) {
+        //console.log(pc);
+        switch (id){
+            case 1:
+                $('#dial1')
+                    .val(pc)
+                    .trigger('change');
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+    }
+
+    function togglePlayPause(id,state) {
+        if (state == false) {
+            $(id).removeClass( "glyphicon-play" ).addClass( "glyphicon-pause" );
+        } else {
+            $(id).removeClass( "glyphicon-pause" ).addClass( "glyphicon-play" );
+        }
+    }
+
+
     // keep track of which hallway image is active
     var whichPic = 1;
 
