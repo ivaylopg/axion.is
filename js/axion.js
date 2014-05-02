@@ -5,6 +5,35 @@ $(document).ready(function () {
 
     //var headSize = $('.header').height();
 
+    // Blog Stuff
+
+    //$.getJSON("http://blog.ivaylogetov.com/api/read/json","jasoncallback=?&start=0&num=3", function () {console.log("BOOM");});
+
+    //http://blog.ivaylogetov.com/api/read/json?
+
+    //$.parseJSON(tumblr_api_read.posts[0]);
+    //alert( obj.name === "John" );
+    //console.log(tumblr_api_read.posts[0].photo-url-1280);
+    //console.log(tumblr_api_read.posts[0]);
+
+    //console.log(tumblr_api_read);
+
+    if (typeof tumblr_api_read !== 'undefined') {
+        console.log(tumblr_api_read.posts[0]);
+    } else {
+        console.log("UNDEFINED");
+    }
+
+    /*
+    $.getScript( "http://blowg.ivaylogetov.com/api/read/json?jasoncallback=?&start=0&num=3" )
+        .done(function(script, textStatus, jqXHR) {
+            console.log(tumblr_api_read.posts[0]);
+        })
+        .fail(function( jqxhr, settings, exception ) {
+            console.log("SHIT");
+    });
+    */
+
     // start skrollr
     var s = skrollr.init({
         forceHeight: false,
@@ -209,6 +238,9 @@ $(document).ready(function () {
             $(id).removeClass( "glyphicon-pause" ).addClass( "glyphicon-play" );
         }
     }
+
+
+
 
 
     // keep track of which hallway image is active
