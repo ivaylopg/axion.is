@@ -70,21 +70,23 @@ $(document).ready(function () {
 
             if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
                 for (var j = 0; j < tumblr_api_read.posts[i]["tags"].length; j++) {
-                    post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
+                    post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '" target="_blank">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
                 };
             }
             post = post + '</p><p><br /><br />&nbsp;</p></div>';
             blogData = blogData + post;
         };
         $("#blogContent").html(blogData);
-        var pos = Math.floor($("#blog").offset().top) + "px";
-        $("#blogContent").css("top",pos);
+        //var hh = $("#blogContent").height();
+        //console.log(hh);
+        //$(".slideB").css("height",hh+"px");
+        s.refresh();
+        //var pos = Math.floor($("#blog").offset().top) + "px";
+        //$("#blogContent").css("top",pos);
 
     } else {
         console.log("UNDEFINED");
     }
-
-
 
     // start SoundManager
     var clip1;
@@ -325,11 +327,16 @@ $(document).ready(function () {
     });
 
     $(window).resize(function(){
-        var pos = Math.floor($("#blog").offset().top) + "px";
-        $("#blogContent").css("top",pos);
+        //var pos = Math.floor($("#blog").offset().top) + "px";
+        //$("#blogContent").css("top",pos);
+        var hh = $("#blogContent").height();
+        console.log(hh);
     });
 
-    
+    $(window).load(function(){
+        //s.refresh();
+        s.refresh($("#blog"));
+    })
     
 
 });

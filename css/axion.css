@@ -263,14 +263,14 @@ p {
 }
 
 #blogContent {
-	position: absolute;
+	position: relative;
 	background-color: rgba(0,0,0,0.8);
 	padding: 20px;
 	z-index: 2;
-	margin: 0% 45% 5% 15%;
+	/*margin: 0% 45% 5% 15%;
 	z-index: 10;
 	top: 0px;
-	left: 0px;
+	left: 0px;*/
 }
 
 .blogEntry {
