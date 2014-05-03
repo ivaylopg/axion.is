@@ -57,35 +57,98 @@ $(document).ready(function () {
     // Blog Stuff
     if (typeof tumblr_api_read !== 'undefined') {
         var blogData = "";
+        var postCount = 0;
+        var maxPosts = 3;
 
         for (var i = 0; i < tumblr_api_read.posts.length; i++) {
-        //for (var i = 0; i < 1; i++) {
-            //console.log(tumblr_api_read.posts[i].date);
-            //$("#blogContent").append("<p>" + tumblr_api_read.posts[i].date + "</p>");
-            var post = '<div class="blogEntry"><span class="blogDate">' + tumblr_api_read.posts[i]["date"] + '</span><div class="divider"></div>';
-            post = post + '<div class="blogImg"><img src="' + tumblr_api_read.posts[i]["photo-url-1280"] + '" /></div>';
-            post = post + tumblr_api_read.posts[i]["photo-caption"];
 
-            post = post + '<p><a href="' + tumblr_api_read.posts[i]["url"] + '">permalink</a>';
+            if (postCount < maxPosts) {
+                var kind = tumblr_api_read.posts[i]["type"];
 
-            if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
-                for (var j = 0; j < tumblr_api_read.posts[i]["tags"].length; j++) {
-                    post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '" target="_blank">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
+                if (kind == "photo") {
+                    var formatDate = blogDate(tumblr_api_read.posts[i]["date"]);
+                    console.log(formatDate);
+
+                    var post = '<div class="blogEntry"><span class="blogDate"><a href="' + tumblr_api_read.posts[i]["url"] + '"target="_blank">' + formatDate + '</a></span><div class="divider"></div>';
+                    
+                    if (kind == "photo") {
+                        post = post + '<div class="blogImg"><img src="' + tumblr_api_read.posts[i]["photo-url-1280"] + '" /></div>';
+                        post = post + tumblr_api_read.posts[i]["photo-caption"];
+                    }
+
+                    post = post + '<p>';
+                    if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
+                        for (var j = 0; j < tumblr_api_read.posts[i]["tags"].length; j++) {
+                            post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '" target="_blank">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
+                        };
+                    }
+                    post = post + '</p><p><br /><br />&nbsp;</p></div>';
+
+                    blogData = blogData + post;
+                    postCount++;
                 };
-            }
-            post = post + '</p><p><br /><br />&nbsp;</p></div>';
-            blogData = blogData + post;
+            };              
         };
         $("#blogContent").html(blogData);
-        //var hh = $("#blogContent").height();
-        //console.log(hh);
-        //$(".slideB").css("height",hh+"px");
         s.refresh();
-        //var pos = Math.floor($("#blog").offset().top) + "px";
-        //$("#blogContent").css("top",pos);
 
     } else {
         console.log("UNDEFINED");
+    }
+
+
+    function blogDate(dString) {
+        var month = "";
+        var numDay =""; 
+        if (dString.charAt(5) == 0) {
+            numDay = String(dString.charAt(6))
+        } else {
+            numDay = String(dString.charAt(5)) + String(dString.charAt(6))
+        };
+        var year = dString.charAt(12) + dString.charAt(13) + dString.charAt(14) + dString.charAt(15);
+        var mon = dString.charAt(8) + dString.charAt(9) + dString.charAt(10);
+        switch(mon) {
+            case "Jan":
+                month = "January";
+                break;
+            case "Feb":
+                month = "February";
+                break
+            case "Mar":
+                month = "March";
+                break
+            case "Apr":
+                month = "April";
+                break
+            case "May":
+                month = "May";
+                break
+            case "Jun":
+                month = "June";
+                break
+            case "Jul":
+                month = "July";
+                break
+            case "Aug":
+                month = "August";
+                break
+            case "Sep":
+                month = "September";
+                break
+            case "Oct":
+                month = "October";
+                break
+            case "Nov":
+                month = "November";
+                break
+            case "Dec":
+                month = "December";
+                break
+            default:
+                month = mon;
+        }
+        var outDate = month + " " + numDay + ", " + year;
+        return outDate;
     }
 
     // start SoundManager
@@ -214,8 +277,6 @@ $(document).ready(function () {
         }
     });
 
-    //$( "p" ).removeClass( "myClass noClass" ).addClass( "yourClass" );
-
     $(".dial").knob({
                 'readOnly':true,
                 'displayInput':false,
@@ -295,6 +356,17 @@ $(document).ready(function () {
             s.animateTo(s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top'), {duration: scrollTime, easing: "easeInOutQuart"});
         }
     }); 
+
+    $("#topNav a").hover(
+      function() {
+        var labelTxt = $(this).attr('data-label');
+        $(".navLabel").html(labelTxt);
+        $(".navLabel").css("visibility","visible");
+      }, function() {
+        $(".navLabel").css("visibility","hidden");
+        $(".navLabel").html(" ");
+      }
+    );
 
     // This is the hallway animation
     $(window).scroll(function(){

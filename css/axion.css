@@ -68,11 +68,24 @@ p {
 	color: #999;
 }
 
- #topNav a:hover {
+#topNav a:hover {
 	color: #333;
 }
 
-
+#topNav .navLabel {
+	display: inline-block;
+	position: absolute;
+	width: 100px;
+	font-size: 80%;
+	line-height:1em;
+    margin-top:0.5em;
+    padding-left: 3%;
+    margin-left: 3%;
+    visibility: hidden;
+    border-left-color: #999;
+    border-left-style: solid;
+    border-left-width: 2px;
+}
 
 #nav.affix {
     position: fixed;
@@ -288,6 +301,18 @@ p {
 	letter-spacing: 1.5px;
 }
 
+.blogEntry .blogDate a {
+	color: #fff;
+	font-weight: 300;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+}
+
+.blogEntry .blogDate a:hover {
+	text-decoration: none;
+	color: #aaa;
+}
+
 .blogEntry .divider {
 	display: block;
 	width: 100%;
@@ -319,11 +344,32 @@ p {
 
 .footer {
 	color: #fff;
-	background-color: #1a1a1a;
+	/*background-color: #1a1a1a;*/
+	background-color:rgb(26,26,26);
 	display: block;
 	position: relative;
 	width: 100%;
 	height: 30%;
+	padding: 1% 30% 2% 30%;
+}
+
+#possible {
+	text-transform: uppercase;
+	font-size: 130%;
+	font-weight: 100;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+.footer .smallPrint {
+	display: block;
+	position: relative;
+	color: #666;
+	font-size: 80%;
+	font-weight: 300;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	top: 90%;
+	width: 100%;
+	text-align: center;
 }
 
 
