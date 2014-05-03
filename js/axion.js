@@ -2,17 +2,26 @@ $(document).ready(function () {
 
 
     // [ ] We still have to implement preload for the hallway!
-    // [ ] Add video and text posts for the blog
+    // [x] Add video and text posts for the blog
     // [ ] Tumblr version of page
     // [ ] Gif replacement of video
+    // [x] Stop video play when not visible
     // [ ] buttons/logos over video
     // [ ] add correct quotes
-    // [ ] add footer to blog
+    // [x] add footer to blog
     // [ ] get rid of unused fonts
     // [ ] add licence and credits to code
     // [ ] add legal footer to site
+    // [x] footer images
+    // [ ] link to github
+    // [ ] mailchimp
+    // [ ] fix press links
+    // [ ] update axion blog
     // [x] add non-blog mode and set as default.
     // [x] add paralax to screening/press section
+    // [ ] side Nav
+    // [ ] social media links?
+    // [ ] clean up all code!
 
 
     // start skrollr
@@ -61,9 +70,8 @@ $(document).ready(function () {
             if (postCount < maxPosts) {
                 var kind = tumblr_api_read.posts[i]["type"];
 
-                if (kind == "photo") {
+                if (kind == "photo" || kind == "video" || kind == "regular") {
                     var formatDate = blogDate(tumblr_api_read.posts[i]["date"]);
-                    console.log(formatDate);
 
                     var post = '<div class="blogEntry"><span class="blogDate"><a href="' + tumblr_api_read.posts[i]["url"] + '"target="_blank">' + formatDate + '</a></span><div class="divider"></div>';
                     
@@ -74,10 +82,24 @@ $(document).ready(function () {
                     }
                     ////////////////
 
+                    // Video Post //
+                    if (kind == "video") {
+                        post = post + '<div class="blogVid">' + tumblr_api_read.posts[i]["video-player-500"] + '</div>';
+                        post = post + tumblr_api_read.posts[i]["video-caption"];
+                    }
+                    ////////////////
+
+                    // Text Post //
+                    if (kind == "regular") {
+                        post = post + "<p><br /> &nbsp;</p>"
+                        post = post + tumblr_api_read.posts[i]["regular-body"];
+                    }
+                    ////////////////
+
                     post = post + '<p>';
                     if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
                         for (var j = 0; j < tumblr_api_read.posts[i]["tags"].length; j++) {
-                            post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '" target="_blank">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
+                            post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '" target="_blank" class="hash">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
                         };
                     }
                     post = post + '</p><p><br /><br />&nbsp;</p></div>';
@@ -88,21 +110,32 @@ $(document).ready(function () {
             };              
         };
         // Create the blog posts
-        $("#blogContent").html(blogData);
+        if (postCount > 1) {
 
-        $("#blogContent").css("visibility","visible");
-        $("#mediaInfo").css({
-          "width": "auto",
-          "left": "58%"
-        });
-        $("#mediaInfo").attr({
-          "data-top-top": "top: 2%;",
-          "data-bottom-bottom": "top: 60%;",
-          "data-anchor-target": "#blog"
-        });
+            blogData = blogData + '<div class="blogEntry"><div class="divider"></div><p><br />&nbsp;</p>'
+            blogData = blogData + '<span class="blogFoot">See more updates on our <a href="http://axionexperience.tumblr.com/"target="_blank">tumblr</a></span></div>';
 
-        // Probably don't need this here:
-        s.refresh();
+            $("#blogContent").html(blogData);
+
+            $(".blogVid").each(function() {
+                $(this).fitVids();
+            });
+
+            $("#blogContent").css("visibility","visible");
+            $("#mediaInfo").css({
+              "width": "auto",
+              "left": "58%"
+            });
+            $("#mediaInfo").attr({
+              "data-top-top": "top: 2%;",
+              "data-bottom-bottom": "top: 60%;",
+              "data-anchor-target": "#blog"
+            });
+
+            // Probably don't need this here:
+            s.refresh();
+        };
+        
     } else {
         console.log("UNDEFINED");
     }
@@ -352,6 +385,14 @@ $(document).ready(function () {
             //console.log(picSrc);
             //console.log(picNo);
         }
+
+
+        if ($(window).scrollTop() > s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top')) {
+        //if ($(window).scrollTop() > 100) {
+            document.getElementById('topVid').pause();
+        } else {
+            document.getElementById('topVid').play();
+        };
     });
 
 

@@ -227,6 +227,33 @@ p {
 }
 
 
+#info p {
+	font-weight: 400;
+	font-size: 110%;
+	color: #999;
+	letter-spacing: 1px;
+}
+
+#info .b {
+	text-transform: uppercase;
+	font-size: 120%;
+	line-height: 150%;
+	letter-spacing: 1.5px;
+	color: #fff;
+	font-weight: 300;
+}
+
+#info .t{
+	font-size: 100%;
+	color: #aaa;
+}
+
+#info .w {
+	color: #fff;
+	font-weight: 100;
+}
+
+
 #who p {
 	text-transform: uppercase;
 	color: #808080;
@@ -323,7 +350,23 @@ p {
 	background-color: #ccc;
 }
 
+.blogEntry blockquote {
+	margin-left: 5%;
+	font-size: 90%;
+	border-left-width: 2px;
+}
+
+.blogEntry blockquote strong {
+	font-weight: 500;
+}
+
 .blogEntry .blogImg {
+	width: 100%;
+	height: auto;
+	padding: 4%;
+}
+
+.blogEntry .blogVid {
 	width: 100%;
 	height: auto;
 	padding: 4%;
@@ -337,12 +380,36 @@ p {
 .blogEntry p {
 	padding-left: 2%;
 }
+
 .blogEntry a {
 	font-weight: 300;
 	font-family: 'Roboto', 'Helvetica', sans-serif;
 	color: #aaa;
+}
+
+.blogEntry a.hash {
 	padding-right: 2%;
 }
+
+.blogEntry .blogFoot {
+	color: #fff;
+	font-weight: 300;
+	font-size: 130%;
+	letter-spacing: 1.5px;
+	text-align: center;
+	padding-left: 2%;
+}
+
+.blogEntry .blogDate a {
+	color: #aaa;
+	letter-spacing: 1.5px;
+}
+
+.blogEntry .blogDate a:hover {
+	text-decoration: underline;
+	color: #aaa;
+}
+
 
 #mediaInfo {
 	width: 30%;
@@ -436,18 +503,29 @@ p {
 }
 
 .footer .smallPrint {
-	display: block;
-	position: relative;
+	display: inline-block;
+	position: absolute;
 	color: #666;
 	font-size: 80%;
 	font-weight: 300;
 	font-family: 'Roboto', 'Helvetica', sans-serif;
 	top: 90%;
+	left: 0%;
 	width: 100%;
 	text-align: center;
 }
 
+.logoImages {
+	display: inline-block;
+	width: 33%;
+	height: auto;
+	padding: 1%;
+}
 
+.logoImages img {
+	width: 100%;
+	height: auto;
+}
 
 
 
