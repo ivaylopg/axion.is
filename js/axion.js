@@ -1,22 +1,18 @@
 $(document).ready(function () {
 
 
-    // we still have to implement preload for the hallway!
-
-
-    
-
-    /*
-    <div class="blogEntry">
-      <span class="blogDate">Sat, 26 Apr 2014 14:50:23</span>
-      <div class="divider"></div>
-      <div class="blogImg"><img src="http:\/\/24.media.tumblr.com\/8e014144038783b82b606bbd6d58d636\/tumblr_n4nizz80xj1qzyep5o1_1280.jpg" ></div>
-      <p>@ksiwoff exploring #axion during @tribecafilmins interactive day. #TFIi #Tribeca  (at IAC)</p>
-      <p><a href="http:\/\/blog.ivaylogetov.com\/post\/83937239727">permalink</a><a href="http://blog.ivaylogetov.com/tagged/tribeca">#tribeca</a><a href="http://blog.ivaylogetov.com/tagged/axion">#axion</a></p>
-      <p><br /><br />&nbsp;</p>
-    </div>
-    */
-
+    // We still have to implement preload for the hallway!
+    // Add video and text posts for the blog
+    // Tumblr version of page
+    // Gif replacement of video
+    // buttons/logos over video
+    // add correct quotes
+    // add footer to blog
+    // get rid of unused fonts
+    // add licence and credits to code
+    // add legal footer to site
+    // add non-blog mode and set as default.
+    // add paralax to screening/press section
 
 
     // start skrollr
@@ -33,7 +29,6 @@ $(document).ready(function () {
             blogHeight: function() {
                 var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
                 var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-                //console.log(b);
                 return b - t;
             }
         },
@@ -54,7 +49,7 @@ $(document).ready(function () {
     });
 
 
-    // Blog Stuff
+    // Render Blog Posts
     if (typeof tumblr_api_read !== 'undefined') {
         var blogData = "";
         var postCount = 0;
@@ -71,10 +66,12 @@ $(document).ready(function () {
 
                     var post = '<div class="blogEntry"><span class="blogDate"><a href="' + tumblr_api_read.posts[i]["url"] + '"target="_blank">' + formatDate + '</a></span><div class="divider"></div>';
                     
+                    // Photo Post //
                     if (kind == "photo") {
                         post = post + '<div class="blogImg"><img src="' + tumblr_api_read.posts[i]["photo-url-1280"] + '" /></div>';
                         post = post + tumblr_api_read.posts[i]["photo-caption"];
                     }
+                    ////////////////
 
                     post = post + '<p>';
                     if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
@@ -89,67 +86,14 @@ $(document).ready(function () {
                 };
             };              
         };
+        // Create the blog posts
         $("#blogContent").html(blogData);
+        // Prbably don't need this here:
         s.refresh();
-
     } else {
         console.log("UNDEFINED");
     }
 
-
-    function blogDate(dString) {
-        var month = "";
-        var numDay =""; 
-        if (dString.charAt(5) == 0) {
-            numDay = String(dString.charAt(6))
-        } else {
-            numDay = String(dString.charAt(5)) + String(dString.charAt(6))
-        };
-        var year = dString.charAt(12) + dString.charAt(13) + dString.charAt(14) + dString.charAt(15);
-        var mon = dString.charAt(8) + dString.charAt(9) + dString.charAt(10);
-        switch(mon) {
-            case "Jan":
-                month = "January";
-                break;
-            case "Feb":
-                month = "February";
-                break
-            case "Mar":
-                month = "March";
-                break
-            case "Apr":
-                month = "April";
-                break
-            case "May":
-                month = "May";
-                break
-            case "Jun":
-                month = "June";
-                break
-            case "Jul":
-                month = "July";
-                break
-            case "Aug":
-                month = "August";
-                break
-            case "Sep":
-                month = "September";
-                break
-            case "Oct":
-                month = "October";
-                break
-            case "Nov":
-                month = "November";
-                break
-            case "Dec":
-                month = "December";
-                break
-            default:
-                month = mon;
-        }
-        var outDate = month + " " + numDay + ", " + year;
-        return outDate;
-    }
 
     // start SoundManager
     var clip1;
@@ -361,9 +305,9 @@ $(document).ready(function () {
       function() {
         var labelTxt = $(this).attr('data-label');
         $(".navLabel").html(labelTxt);
-        $(".navLabel").css("visibility","visible");
+        $(".navLabel").css({"visibility":"visible","opacity":"1"});
       }, function() {
-        $(".navLabel").css("visibility","hidden");
+        $(".navLabel").css({"opacity":"0","visibility":"hidden"});
         $(".navLabel").html(" ");
       }
     );
@@ -398,11 +342,68 @@ $(document).ready(function () {
         }
     });
 
+
+    // Global functions and events
+    
+    function blogDate(dString) {
+        var month = "";
+        var numDay =""; 
+        if (dString.charAt(5) == 0) {
+            numDay = String(dString.charAt(6))
+        } else {
+            numDay = String(dString.charAt(5)) + String(dString.charAt(6))
+        };
+        var year = dString.charAt(12) + dString.charAt(13) + dString.charAt(14) + dString.charAt(15);
+        var mon = dString.charAt(8) + dString.charAt(9) + dString.charAt(10);
+        switch(mon) {
+            case "Jan":
+                month = "January";
+                break;
+            case "Feb":
+                month = "February";
+                break
+            case "Mar":
+                month = "March";
+                break
+            case "Apr":
+                month = "April";
+                break
+            case "May":
+                month = "May";
+                break
+            case "Jun":
+                month = "June";
+                break
+            case "Jul":
+                month = "July";
+                break
+            case "Aug":
+                month = "August";
+                break
+            case "Sep":
+                month = "September";
+                break
+            case "Oct":
+                month = "October";
+                break
+            case "Nov":
+                month = "November";
+                break
+            case "Dec":
+                month = "December";
+                break
+            default:
+                month = mon;
+        }
+        var outDate = month + " " + numDay + ", " + year;
+        return outDate;
+    }
+
     $(window).resize(function(){
         //var pos = Math.floor($("#blog").offset().top) + "px";
         //$("#blogContent").css("top",pos);
-        var hh = $("#blogContent").height();
-        console.log(hh);
+        //var hh = $("#blogContent").height();
+        //console.log(hh);
     });
 
     $(window).load(function(){
