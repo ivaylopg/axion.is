@@ -1,18 +1,18 @@
 $(document).ready(function () {
 
 
-    // We still have to implement preload for the hallway!
-    // Add video and text posts for the blog
-    // Tumblr version of page
-    // Gif replacement of video
-    // buttons/logos over video
-    // add correct quotes
-    // add footer to blog
-    // get rid of unused fonts
-    // add licence and credits to code
-    // add legal footer to site
-    // add non-blog mode and set as default.
-    // add paralax to screening/press section
+    // [ ] We still have to implement preload for the hallway!
+    // [ ] Add video and text posts for the blog
+    // [ ] Tumblr version of page
+    // [ ] Gif replacement of video
+    // [ ] buttons/logos over video
+    // [ ] add correct quotes
+    // [ ] add footer to blog
+    // [ ] get rid of unused fonts
+    // [ ] add licence and credits to code
+    // [ ] add legal footer to site
+    // [x] add non-blog mode and set as default.
+    // [x] add paralax to screening/press section
 
 
     // start skrollr
@@ -47,6 +47,7 @@ $(document).ready(function () {
             easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
         }
     });
+
 
 
     // Render Blog Posts
@@ -88,12 +89,23 @@ $(document).ready(function () {
         };
         // Create the blog posts
         $("#blogContent").html(blogData);
-        // Prbably don't need this here:
+
+        $("#blogContent").css("visibility","visible");
+        $("#mediaInfo").css({
+          "width": "auto",
+          "left": "58%"
+        });
+        $("#mediaInfo").attr({
+          "data-top-top": "top: 2%;",
+          "data-bottom-bottom": "top: 60%;",
+          "data-anchor-target": "#blog"
+        });
+
+        // Probably don't need this here:
         s.refresh();
     } else {
         console.log("UNDEFINED");
     }
-
 
     // start SoundManager
     var clip1;
@@ -344,7 +356,7 @@ $(document).ready(function () {
 
 
     // Global functions and events
-    
+
     function blogDate(dString) {
         var month = "";
         var numDay =""; 

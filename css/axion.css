@@ -282,6 +282,7 @@ p {
 	background-color: rgba(0,0,0,0.8);
 	padding: 20px;
 	z-index: 2;
+	visibility: hidden;
 	/*margin: 0% 45% 5% 15%;
 	z-index: 10;
 	top: 0px;
@@ -344,6 +345,14 @@ p {
 }
 
 #mediaInfo {
+	width: 30%;
+	height: auto;
+	display: block;
+	position: absolute;
+	padding: 3% 10% 10% 3%;
+}
+/*
+#mediaInfo {
 	width: auto;
 	height: auto;
 	display: block;
@@ -351,7 +360,7 @@ p {
 	top: 5%;
 	left: 58%;
 	padding: 3% 10% 10% 3%;
-}
+}*/
 
 #mediaInfo .divider {
 	display: block;
