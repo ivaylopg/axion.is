@@ -226,7 +226,7 @@ p {
 	padding: 20px;
 }
 
-
+#contact p,
 #info p {
 	font-weight: 400;
 	font-size: 110%;
@@ -234,6 +234,7 @@ p {
 	letter-spacing: 1px;
 }
 
+#contact .b,
 #info .b {
 	text-transform: uppercase;
 	font-size: 120%;
@@ -243,11 +244,13 @@ p {
 	font-weight: 300;
 }
 
+#contact .t,
 #info .t{
 	font-size: 100%;
 	color: #aaa;
 }
 
+#contact .w,
 #info .w {
 	color: #fff;
 	font-weight: 100;
@@ -525,6 +528,76 @@ p {
 .logoImages img {
 	width: 100%;
 	height: auto;
+}
+
+form {
+display: inline-block;
+width: 60%;
+font-weight: 300;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+[type="email"] {
+  -moz-appearance:    textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+.textEnter::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #666;
+font-weight: 100;
+}
+.textEnter:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #666;
+font-weight: 300;
+}
+.textEnter::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #666;
+font-weight: 300;
+}
+.textEnter:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #666;
+font-weight: 300;
+}
+
+#mc-embedded-subscribe-form .textEnter,
+#mc-embedded-subscribe-form .btn {
+border-radius: 0px;
+}
+
+#mc-embedded-subscribe-form .textEnter {
+/*width: 400px;*/
+font-weight: 500;
+background-color: #ccc;
+border-color: #999;
+}
+
+#mc-embedded-subscribe-form .textEnter:focus {
+  outline: 0;
+}
+
+#mc-embedded-subscribe-form .btn-default {
+color: #000;
+background-color: #ccc;
+border-color: #999;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+#mc-embedded-subscribe-form .btn-default:hover,
+#mc-embedded-subscribe-form .btn-default:focus,
+#mc-embedded-subscribe-form .btn-default:active,
+#mc-embedded-subscribe-form .btn-default.active,
+#mc-embedded-subscribe-form .open .dropdown-toggle.btn-default {
+color: #333;
+background-color: #aaa;
+border-color: #999;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+#mc-embedded-subscribe-form .btn-default:active,
+#mc-embedded-subscribe-form .btn-default.active,
+#mc-embedded-subscribe-form .open .dropdown-toggle.btn-default {
+background-image: none;
+font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
 
