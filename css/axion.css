@@ -45,6 +45,42 @@ p {
 	z-index: -1;
 }
 
+#fixedNav {
+	display: block;
+	position: fixed;
+	top: 2%;
+	left: 1%;
+	font-size: 128%;
+	color: #999;
+	height: auto;
+	width: auto;
+	visibility: hidden;
+	opacity: 0;
+	/*
+	padding: 3px;
+	background-color: rgba(0,0,0,0.8);
+	*/
+}
+
+/*
+#fixedNav .navLabel {
+	display: inline-block;
+	position: absolute;
+	font-size: 80%;
+	width: 100px;
+	height: auto;
+	line-height:1em;
+    margin-top:0.45em;
+    padding-left: 20%;
+    margin-left: 3%;
+    visibility: visible;
+    opacity: 1;
+	transition: opacity .25s ease-in-out;
+	-moz-transition: opacity .25s ease-in-out;
+	-webkit-transition: opacity .25s ease-in-out;
+}
+*/
+
 #topNav {
 	font-size: 128%;
 	color: #999;
@@ -56,19 +92,22 @@ p {
 	/*margin-top: -36px; Will be good for smaller screen*/
 	margin-top: -50px;
 }
-
+#fixedNav .glyphicon,
 #topNav .glyphicon {
 	display: inline-block;
 	padding: 4px;
 }
 
+#fixedNav a,
 #topNav a {
 	color: #999;
 }
 
+#fixedNav a:hover,
 #topNav a:hover {
 	color: #333;
 }
+
 
 #topNav .navLabel {
 	display: inline-block;
@@ -89,12 +128,15 @@ p {
 	-webkit-transition: opacity .15s ease-in;
 }
 
+/*
 #nav.affix {
     position: fixed;
     top: 0;
     width: 100%;
     z-index:10;
 }
+*/
+
 
 .text {
 	display: block;
@@ -404,13 +446,13 @@ p {
 }
 
 .blogEntry .blogDate a {
-	color: #aaa;
+	color: #fff;
 	letter-spacing: 1.5px;
 }
 
 .blogEntry .blogDate a:hover {
 	text-decoration: underline;
-	color: #aaa;
+	color: #fff;
 }
 
 
@@ -485,6 +527,19 @@ p {
 	display: inline-block;
 	width: auto;
 	/*background-color: #009;*/
+}
+
+#contact a,
+#mediaInfo a {
+	font-weight: 300;
+	text-decoration: underline;
+	color: #fff;
+}
+
+#contact a:hover,
+#mediaInfo a:hover {
+	text-decoration: none;
+	color: #fff;
 }
 
 .footer {

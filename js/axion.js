@@ -11,15 +11,15 @@ $(document).ready(function () {
     // [x] add footer to blog
     // [ ] get rid of unused fonts
     // [ ] add licence and credits to code
-    // [ ] add legal footer to site
+    // [x] add legal footer to site
     // [x] footer images
-    // [ ] link to github
-    // [ ] mailchimp
-    // [ ] fix press links
+    // [x] link to github
+    // [x] mailchimp
+    // [x] fix press links
     // [ ] update axion blog
     // [x] add non-blog mode and set as default.
     // [x] add paralax to screening/press section
-    // [ ] side Nav
+    // [x] side Nav
     // [ ] social media links?
     // [ ] clean up all code!
 
@@ -328,7 +328,7 @@ $(document).ready(function () {
     });
 
     // animate scrolling for navigation links
-    $("#topNav a").click(function( event ) {
+    $("#topNav a, #fixedNav a").click(function( event ) {
         event.preventDefault();
         var scrollTime = ($("#blog").outerHeight() / $("#info").outerHeight()) + 4500;
         //var d = $(this).attr('href');
