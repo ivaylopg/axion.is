@@ -44,7 +44,7 @@ $(document).ready(function () {
     if (isMobile == true) {
         $("#topVid").css({"width":"1px","height":"1px"});
         $("#topVid").remove();
-    } else if (uA.indexOf("Safari") > 0) {
+    } else if (uA.indexOf("Safari") > 0 && uA.indexOf("Chrome") < 0) {
         $(".header").css("z-index","-1");
     } else {
         $.getScript("js/skrollr.min.js")
