@@ -55,6 +55,7 @@ $(document).ready(function () {
     };
 
     var s;
+    var sActive = false;
     function startSkrollr(){
         if (isMobile == false) {
             // start skrollr
@@ -89,6 +90,8 @@ $(document).ready(function () {
                     easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
                 }
             });
+            
+            sActive = true;
         };
     };
     
@@ -179,7 +182,7 @@ $(document).ready(function () {
             });
 
             // Probably don't need this here:
-            if (isMobile == false) {
+            if (isMobile == false && sActive == true;) {
                 s.refresh();
             }
         };
@@ -533,7 +536,8 @@ $(document).ready(function () {
     $(window).load(function(){
         //s.refresh();
         if (isMobile == false) {
-            s.refresh($("#blog"));
+            s.refresh();
+            //s.refresh($("#blog"));
         }
         
 
