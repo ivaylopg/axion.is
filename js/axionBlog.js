@@ -144,6 +144,20 @@ $(document).ready(function () {
         console.log("UNDEFINED");
     }
 
+
+    var qt1 = Math.floor((Math.random() * 2) + 1);
+    var qt2 = Math.floor((Math.random() * 2) + 1);
+
+    if (qt1 == 2) {
+        //$('#qc1').html("<p>We are at a stage where, as experimentalists, we are a bit lost because there is not a real theory out there which says, 'you should look in this direction.' We are looking. I am looking in the dark.</p><footer>Professor Elena Aprile</footer>")
+        $('#qc1').html("<p>We have all reasons to believe that dark matter is real... If dark matter is a particle, it is its own anti-particle, so it's matter and antimatter at the same time. As two galaxies collide, the ordinary matter actually collides, and you see the other component, the one that interacts so little, just passing through each other...like the other one wasn't there.</p><footer>Professor Martin Pohl</footer>");
+    };
+
+    if (qt2 == 2) {
+        $('#qc2').html("<p>I mean, I've come to the view myself where Theoretical Physics is almost a sort of, kind of wierd representational art form. In the sense that this gets to the heart of what Theoretical Physics does today faster than telling someone you're a 'scientist.'</p><footer>Dr. Mark Wyman</footer>");
+    };
+
+
     // once video is loaded and playing, get rid of poster frame to eliminate stutter on loop
     $(".vidCover").on("play", function(){
         $(this).attr("poster","");
@@ -322,7 +336,10 @@ $(document).ready(function () {
         
         // REMOTE
         for (var i = 1; i <= howManyPics; i++) {
-            $.preload( "http://www.ivaylogetov.com/axion/bgseq/" + i + ".jpg");
+
+            var bImage = new Image();
+            bImage.src = "http://www.ivaylogetov.com/axion/bgseq/" + i + ".jpg";
+
         };
         
     })

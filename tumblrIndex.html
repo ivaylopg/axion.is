@@ -46,28 +46,22 @@
 </div>
 
 
-<div id="blog" class="slide slideB" data-bottom-top="padding-top: 10%;" data-top-top="padding-top: 10%;">
+<div id="blog" class="slide slideB" data-bottom-top="padding-top: 8%;" data-top-top="padding-top: 0%;">
   <div id="tunnel" data-top-top="top: 0%;" data--100p-bottom-bottom="top: 100%;" data-anchor-target="#blog">
     <img id="tunnelImg" src="img/bgseq/1.jpg" />
   </div>
   
-  <div id="blogContent" data-bottom-top="top: 0px;" data-top-top="top: -200px;" data-anchor-target="#blog">
+  <div id="blogHeadFoot">
+    <p>
+      
+      <span style="color: #aaa; font-weight: 400;">AXION</span> is a unique, app-based interactive documentary exploring the Scientific Method and human metamorphosis by inviting a player to immerse themselves in a unique audiovisual world and reflect on their journey. For more information, visit <a href="http://www.axion.is">axion.is</a>
+    </p>
+    <p>
+      This tumblr is where we will post updates throughout the development process and announce upcoming screenings and demos.
+    </p>
   </div>
 
-
-  <div id="mediaInfo" class="clearBack" data-top-top="top: 2%;" data-bottom-bottom="top: 60%;" data-anchor-target="#blog">
-    <span class="t">Press</span>
-    <div class="divider"></div>
-    <p>
-      <span class="w l mix"><a href="http://www.bbc.co.uk/programmes/p01tmmzv" target="_blank">BBC World Service</a></span><span class="r mix">"CERN: Story Matter"</span><br />
-      <span class="w l mix"><a href="http://www.bbc.com/news/technology-26938150" target="_blank">BBC News</a></span><span class="r mix">"Filmmakers challenged to make science compelling"</span><br /><br />&nbsp;
-    </p>
-    <span class="t">Screenings</span>
-    <div class="divider"></div>
-    <p>
-      <span class="w l mix"><a href="http://cineglobe.ch/special-events/tribeca-hacks-story-matter/" target="_blank">Mar 19, 2014</a></span><span class="r mix">CineGlobe IFF 2014</span><br />
-      <span class="w l mix"><a href="https://tribecafilminstitute.org/pages/2014_lineup" target="_blank">Apr 26, 2014</a></span><span class="r mix">TFI Interactive 2014</span><br /><br />&nbsp;
-    </p>
+  <div id="blogContent" >
   </div>
 </div>
 
@@ -111,9 +105,6 @@
     <p>
       We are currently in the prototyping and development phase and have not released a publicly available app yet. If you are interested in trying out a beta version, please get in touch. Our source code is released under the MIT licence and can be found on <a href="https://github.com/ivaylopg/Axion" target="_blank">GitHub</a> if you are interested in compiling your own binary.
     </p>
-    <p>
-      Please send any questions, feedback, and requests for screenings/demonstrations to <a href="mailto:contact@axion.is" target="_blank">contact@axion.is</a>
-    </p>
 
   </div>
 </div>
@@ -133,14 +124,15 @@
   <span class="smallPrint">Website and application source code is released under an MIT licence. Images, audio, and video are released under Creative Commons. © 2014</span>
 </div>
 
+<!--
 <div id="fixedNav" data-top-top:"opacity: 0; visibility:!hidden" data-top-center="opacity: 0; visibility:!visible" data-top-bottom="opacity: 1; visibility:!visible" data-anchor-target="#underVideo">
   <a href="#info" data-target="info" data-label="About"><span class="glyphicon glyphicon-info-sign"></span></a></span><br />
   <a href="#who" data-target="who" data-label="Credits"><span class="glyphicon glyphicon-user"></span></a><br />
   <a href="#blog" data-target="blog" data-label="News"><span class="glyphicon glyphicon-comment"></span></a><br />
   <a href="#contact" data-target="contact" data-label="Get Updates"><span class="glyphicon glyphicon-envelope"></span></a><br />
   <a href="#contact" data-target="contact" data-label="Download"><span class="glyphicon glyphicon-cloud-download"></span></a>
-  <!--<div class="navLabel"></div>-->
 </div>
+-->
 <div id="preloadHolder">
 </div>
 
@@ -162,22 +154,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="js/bootstrap.min.js"></script>
 
-    <script type="text/javascript" src="js/soundmanager2.js"></script>
-
-    <script type="text/javascript" src="js/jquery.knob.js"></script>
-
-    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
-
     <!--<script type="text/javascript" src="http://blog.ivaylogetov.com/api/read/json?jasoncallback=?&start=0&num=10"></script>-->
     <script type="text/javascript" src="http://axionexperience.tumblr.com/api/read/json?jasoncallback=?&start=0&num=10"></script>
 
     <script type="text/javascript" src="js/skrollr.min.js"></script>
-    <!--<script type="text/javascript">
-        skrollr.init({
-            forceHeight: false,
-            smoothScrolling: false
-        });
-    </script>-->
+
     <script src="js/axionBlog.js"></script>
   </body>
 </html>

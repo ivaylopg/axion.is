@@ -318,6 +318,15 @@ p {
 	left: 0px;*/
 }
 
+#blogHeadFoot {
+	position: relative;
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+	padding: 20px;
+	z-index: 2;
+	visibility: visible;
+}
+
 .blogEntry {
 	/*
 	padding-left: 4%;
@@ -412,18 +421,7 @@ p {
 	color: #fff;
 }
 
-
-
-#mediaInfo {
-	width: auto;
-	left: 58%;
-	height: auto;
-	display: block;
-	position: absolute;
-	padding: 3% 10% 10% 3%;
-}
-
-#mediaInfo .divider {
+#blogHeadFoot .divider {
 	display: block;
 	width: 100%;
 	height: 2px;
@@ -431,15 +429,14 @@ p {
 	margin-bottom: 15px;
 }
 
-#mediaInfo p {
-	text-transform: uppercase;
-	color: #808080;
+#blogHeadFoot p {
+	color: #fff;
 	font-size: 120%;
 	width: auto;
 	font-weight: 300;
 }
 
-#mediaInfo .mix {
+#blogHeadFoot .mix {
 	text-transform: none;
 }
 
@@ -454,41 +451,46 @@ p {
 	letter-spacing: 1.5px;
 }
 
-#mediaInfo .b {
+#blogHeadFoot .b {
 	font-size: 120%;
 	line-height: 180%;
 	font-weight: 300;
 	letter-spacing: 1.5px;
 }
 
-#mediaInfo .w {
+#blogHeadFoot .w {
 	color: #fff;
 	font-weight: 100;
 }
 
-#mediaInfo .l {
+#blogHeadFoot .l {
 	display: inline-block;
 	width: 120px;
 	/*background-color: #900;*/
 }
 
-#mediaInfo .r {
+#blogHeadFoot .r {
 	display: inline-block;
 	width: auto;
 	/*background-color: #009;*/
 }
 
 #contact a,
-#mediaInfo a {
+#blogHeadFoot a {
 	font-weight: 300;
 	text-decoration: underline;
 	color: #fff;
 }
 
 #contact a:hover,
-#mediaInfo a:hover {
+#blogHeadFoot a:hover {
 	text-decoration: none;
 	color: #fff;
+}
+
+#blogHeadFoot .centerMe {
+	width: 100%;
+	text-align: center;
 }
 
 .footer {
@@ -615,5 +617,17 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	height: 2px;
 }
 
+
+@media (max-width: 1500px) {
+  .slideB {
+		padding: 10% 15% 5% 15%;
+	}
+}
+
+@media (max-width: 800px) {
+  .slideB {
+		padding: 10% 5% 5% 5%;
+	}
+}
 
 
