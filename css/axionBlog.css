@@ -62,24 +62,19 @@ p {
 	*/
 }
 
-/*
-#fixedNav .navLabel {
-	display: inline-block;
-	position: absolute;
-	font-size: 80%;
-	width: 100px;
-	height: auto;
-	line-height:1em;
-    margin-top:0.45em;
-    padding-left: 20%;
-    margin-left: 3%;
-    visibility: visible;
-    opacity: 1;
-	transition: opacity .25s ease-in-out;
-	-moz-transition: opacity .25s ease-in-out;
-	-webkit-transition: opacity .25s ease-in-out;
+#titleLogo {
+	display: block;
+	position: fixed;
+	top: 6%;
+	left: 2%;
+	height: 35%;
+	width: auto;
 }
-*/
+
+#titleLogo img {
+	height: 100%;
+	width: auto;
+}
 
 #topNav {
 	font-size: 128%;
@@ -128,14 +123,6 @@ p {
 	-webkit-transition: opacity .15s ease-in;
 }
 
-/*
-#nav.affix {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:10;
-}
-*/
 
 
 .text {
@@ -154,36 +141,6 @@ p {
 	background-color:rgb(170,170,170);
 	padding: 2% 10% 2% 10%;
 	z-index: 4;
-}
-
-.quotePlay {
-	display: block;
-	position: absolute;
-	width: 5%;
-	height: auto;
-	top: 0%;
-	left: 10%;
-	margin-top: 2%;
-	visibility: hidden;
-	z-index: 5;
-}
-
-.quotePlay .playIcon {
-	display: block;
-	position: absolute;
-	font-size: 200%;
-	width: 100%;
-	margin-left: 2%;
-	text-align: center;
-	top: 50%;
-	line-height:1em;
-    margin-top:-0.6em;
-    color: #222;
-}
-
-.quotePlay .playIcon:hover {
-	color: #666;
-	cursor: pointer;
 }
 
 .quote p {
@@ -354,7 +311,7 @@ p {
 	background-color: rgba(0,0,0,0.8);
 	padding: 20px;
 	z-index: 2;
-	visibility: hidden;
+	visibility: visible;
 	/*margin: 0% 45% 5% 15%;
 	z-index: 10;
 	top: 0px;
@@ -456,23 +413,15 @@ p {
 }
 
 
+
 #mediaInfo {
-	width: 30%;
+	width: auto;
+	left: 58%;
 	height: auto;
 	display: block;
 	position: absolute;
 	padding: 3% 10% 10% 3%;
 }
-/*
-#mediaInfo {
-	width: auto;
-	height: auto;
-	display: block;
-	position: absolute;
-	top: 5%;
-	left: 58%;
-	padding: 3% 10% 10% 3%;
-}*/
 
 #mediaInfo .divider {
 	display: block;
@@ -665,11 +614,6 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	width: 2px;
 	height: 2px;
 }
-
-
-
-
-
 
 
 
