@@ -45,7 +45,6 @@ $(document).ready(function () {
         $("#topVid").css({"width":"1px","height":"1px"});
         $("#topVid").remove();
     } else {
-        /*
         $.getScript("js/skrollr.min.js")
           .done(function( script, textStatus ) {
             console.log( textStatus );
@@ -54,8 +53,8 @@ $(document).ready(function () {
           .fail(function( jqxhr, settings, exception ) {
             console.log( exception );
         });
-        */
-        startSkrollr();
+        
+        //startSkrollr();
     };
 
     var s;
