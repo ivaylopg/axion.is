@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // [x] We still have to implement preload for the hallway!
     // [x] Add video and text posts for the blog
-    // [ ] Tumblr version of page
+    // [x] Tumblr version of page
     // [ ] Gif replacement of video
     // [x] Stop video play when not visible
     // [ ] buttons/logos over video
