@@ -43,43 +43,55 @@ $(document).ready(function () {
 
     if (isMobile == true) {
         $("#topVid").remove();
+    } else {
+        $.getScript("js/skrollr.min.js")
+          .done(function( script, textStatus ) {
+            console.log( textStatus );
+            startSkrollr();
+          })
+          .fail(function( jqxhr, settings, exception ) {
+            console.log( exception );
+        });
     };
 
     var s;
-    if (isMobile == false) {
-        // start skrollr
-        s = skrollr.init({
-            forceHeight: false,
-            smoothScrolling: false,
-            constants: {
-                blogTop: function() {
-                    return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+    function startSkrollr(){
+        if (isMobile == false) {
+            // start skrollr
+            s = skrollr.init({
+                forceHeight: false,
+                smoothScrolling: false,
+                constants: {
+                    blogTop: function() {
+                        return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+                    },
+                    blogBottom: function() {
+                        return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
+                    },
+                    blogHeight: function() {
+                        var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+                        var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
+                        return b - t;
+                    }
                 },
-                blogBottom: function() {
-                    return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-                },
-                blogHeight: function() {
-                    var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
-                    var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-                    return b - t;
+                easing: {
+                    easeInQuad: function (p) { return p*p },
+                    easeOutQuad: function (p) { return p*(2-p) },
+                    easeInOutQuad: function (p) { return p<.5 ? 2*p*p : -1+(4-2*p)*p },
+                    easeInCubic: function (p) { return p*p*p },
+                    easeOutCubic: function (p) { return (--p)*p*p+1 },
+                    easeInOutCubic: function (p) { return p<.5 ? 4*p*p*p : (p-1)*(2*p-2)*(2*p-2)+1 },
+                    easeInQuart: function (p) { return p*p*p*p },
+                    easeOutQuart: function (p) { return 1-(--p)*p*p*p },
+                    easeInOutQuart: function (p) { return p<.5 ? 8*p*p*p*p : 1-8*(--p)*p*p*p },
+                    easeInQuint: function (p) { return p*p*p*p*p },
+                    easeOutQuint: function (p) { return 1+(--p)*p*p*p*p },
+                    easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
                 }
-            },
-            easing: {
-                easeInQuad: function (p) { return p*p },
-                easeOutQuad: function (p) { return p*(2-p) },
-                easeInOutQuad: function (p) { return p<.5 ? 2*p*p : -1+(4-2*p)*p },
-                easeInCubic: function (p) { return p*p*p },
-                easeOutCubic: function (p) { return (--p)*p*p+1 },
-                easeInOutCubic: function (p) { return p<.5 ? 4*p*p*p : (p-1)*(2*p-2)*(2*p-2)+1 },
-                easeInQuart: function (p) { return p*p*p*p },
-                easeOutQuart: function (p) { return 1-(--p)*p*p*p },
-                easeInOutQuart: function (p) { return p<.5 ? 8*p*p*p*p : 1-8*(--p)*p*p*p },
-                easeInQuint: function (p) { return p*p*p*p*p },
-                easeOutQuint: function (p) { return 1+(--p)*p*p*p*p },
-                easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
-            }
-        });
+            });
+        };
     };
+    
 
 
 
