@@ -58,91 +58,7 @@ $(document).ready(function () {
         }
     });
 
-    //////////////////////////////////////////////////////////////////
-
-    // Render Blog Posts
-    if (typeof tumblr_api_read !== 'undefined') {
-        var blogData = "";
-        var postCount = 0;
-        var maxPosts = 3;
-
-        for (var i = 0; i < tumblr_api_read.posts.length; i++) {
-
-            if (postCount < maxPosts) {
-                var kind = tumblr_api_read.posts[i]["type"];
-
-                if (kind == "photo" || kind == "video" || kind == "regular") {
-                    var formatDate = blogDate(tumblr_api_read.posts[i]["date"]);
-
-                    var post = '<div class="blogEntry"><span class="blogDate"><a href="' + tumblr_api_read.posts[i]["url"] + '"target="_blank">' + formatDate + '</a></span><div class="divider"></div>';
-                    
-                    // Photo Post //
-                    if (kind == "photo") {
-                        post = post + '<div class="blogImg"><img src="' + tumblr_api_read.posts[i]["photo-url-1280"] + '" /></div>';
-                        post = post + tumblr_api_read.posts[i]["photo-caption"];
-                    }
-                    ////////////////
-
-                    // Video Post //
-                    if (kind == "video") {
-                        post = post + '<div class="blogVid">' + tumblr_api_read.posts[i]["video-player-500"] + '</div>';
-                        post = post + tumblr_api_read.posts[i]["video-caption"];
-                    }
-                    ////////////////
-
-                    // Text Post //
-                    if (kind == "regular") {
-                        post = post + "<p><br /> &nbsp;</p>"
-                        post = post + tumblr_api_read.posts[i]["regular-body"];
-                    }
-                    ////////////////
-
-                    post = post + '<p>';
-                    if (tumblr_api_read.posts[i]["tags"] !== 'undefined') {
-                        for (var j = 0; j < tumblr_api_read.posts[i]["tags"].length; j++) {
-                            post = post + '<a href="http://axionexperience.tumblr.com/tagged/' + tumblr_api_read.posts[i]["tags"][j] + '" target="_blank" class="hash">#' + tumblr_api_read.posts[i]["tags"][j] + '</a>';
-                        };
-                    }
-                    post = post + '</p><p><br /><br />&nbsp;</p></div>';
-
-                    blogData = blogData + post;
-                    postCount++;
-                };
-            };              
-        };
-        // Create the blog posts
-        if (postCount > 1) {
-
-            blogData = blogData + '<div class="blogEntry"><div class="divider"></div><p><br />&nbsp;</p>'
-            blogData = blogData + '<span class="blogFoot">See more updates on our <a href="http://axionexperience.tumblr.com/"target="_blank">tumblr</a></span></div>';
-
-            $("#blogContent").html(blogData);
-
-            $(".blogVid").each(function() {
-                $(this).fitVids();
-            });
-
-            /*
-
-            $("#blogContent").css("visibility","visible");
-            $("#mediaInfo").css({
-              "width": "auto",
-              "left": "58%"
-            });
-            $("#mediaInfo").attr({
-              "data-top-top": "top: 2%;",
-              "data-bottom-bottom": "top: 60%;",
-              "data-anchor-target": "#blog"
-            });
-            */
-
-            // Probably don't need this here:
-            s.refresh();
-        };
-        
-    } else {
-        console.log("UNDEFINED");
-    }
+    
 
 
     var qt1 = Math.floor((Math.random() * 2) + 1);
@@ -240,7 +156,7 @@ $(document).ready(function () {
 
             
             // REMOTE
-            var picSrc = "http://www.ivaylogetov.com/axionblog/bgseq/" + picNo + ".jpg";
+            var picSrc = "http://www.ivaylogetov.com/axionblog/img/bgseq/" + picNo + ".jpg";
             $('#tunnelImg').attr("src",picSrc);
         }
 
@@ -338,7 +254,7 @@ $(document).ready(function () {
         for (var i = 1; i <= howManyPics; i++) {
 
             var bImage = new Image();
-            bImage.src = "http://www.ivaylogetov.com/axionblog/bgseq/" + i + ".jpg";
+            bImage.src = "http://www.ivaylogetov.com/axionblog/img/bgseq/" + i + ".jpg";
 
         };
         

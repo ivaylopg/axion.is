@@ -1,0 +1,98 @@
+<!-- This is where the magic happens -->
+        {block:SearchPage}
+        <div class="blogEntry">
+        <p>Your search for <span class="query">{SearchQuery}</span> returned {SearchResultCount} result(s)</p>
+        </div>
+        {/block:SearchPage}
+        
+        
+        
+        {block:Posts}
+        <div class="blogEntry">
+
+        
+        {block:NewDayDate}
+        <span class="blogDate">
+            <a href="{Permalink}"target="_blank">{Month} {DayOfMonth}, {Year}</a>
+        </span>
+        <div class="divider"></div>
+        {/block:NewDayDate}
+
+        <p><br /> &nbsp;</p>
+
+        {block:RebloggedFrom} 
+        <p>
+            Reblogged from <a href="{ReblogParentURL}" target="_blank" class="hash">{ReblogParentName}:</a>
+        </p>
+        {/block:RebloggedFrom}  
+        
+        {block:Regular}
+            
+            {Body}
+            <p>
+                <a href="{Permalink}" target="_blank" class="hash">{TimeAgo}</a>{block:HasTags}{block:Tags}<a href="{TagURL}" target="_blank" class="hash">#{Tag}</a>{/block:Tags}{/block:HasTags}
+            </p>
+        {/block:Regular}
+        
+        {block:Photo}
+            
+            <div class="blogImg">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="highres" />{LinkCloseTag}</div>
+            {Caption}
+            <p>
+                <a href="{Permalink}" target="_blank" class="hash">{TimeAgo}</a>{block:HasTags}{block:Tags}<a href="{TagURL}" target="_blank" class="hash">#{Tag}</a>{/block:Tags}{/block:HasTags}
+            </p>
+        {/block:Photo}
+        
+        {block:Photoset}
+            
+            {block:Photos}
+        
+                <div class="blogImg">{LinkOpenTag}<img src="{PhotoURL-HighRes}" alt="{PhotoAlt}" class="highres" />{LinkCloseTag}</div>
+                {block:Caption}
+                    {Caption}
+                {/block:Caption}
+        
+            {/block:Photos}
+            
+            {block:Caption}
+                {Caption}
+            {/block:Caption}
+            <p>
+                <a href="{Permalink}" target="_blank" class="hash">{TimeAgo}</a>{block:HasTags}{block:Tags}<a href="{TagURL}" target="_blank" class="hash">#{Tag}</a>{/block:Tags}{/block:HasTags}
+            </p>
+        {/block:Photoset}
+        
+        {block:Video}
+            <div class="blogVid">{Video-500}</div>
+            {Caption}
+            <p>
+                <a href="{Permalink}" target="_blank" class="hash">{TimeAgo}</a>{block:HasTags}{block:Tags}<a href="{TagURL}" target="_blank" class="hash">#{Tag}</a>{/block:Tags}{/block:HasTags}
+            </p>
+        {/block:Video}
+        
+        <p><br /><br />&nbsp;</p>
+        </div><!-- blog entry -->
+        
+        {/block:Posts}
+      
+      
+      <!-- ------------------------------- -->
+
+        {block:Pagination}
+        <div class="blogEntry"><div class="divider"></div><p><br />&nbsp;</p>
+        <p>
+            {block:PreviousPage}
+                <a class="hash" href="{PreviousPage}"><span class="glyphicon glyphicon-arrow-left"></span> Previous </a> &nbsp;&nbsp;
+            {/block:PreviousPage}
+
+
+
+            {block:NextPage}
+                <a class="hash" href="{NextPage}"> Next <span class="glyphicon glyphicon-arrow-right"></a> &#8594;
+            {/block:NextPage}
+
+        </p>
+        </div>
+        {/block:Pagination}
+
+
