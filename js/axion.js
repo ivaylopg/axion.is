@@ -403,8 +403,8 @@ $(document).ready(function () {
     var howManyPics =29;
 
     // This is the hallway animation
-    $(window).scroll(function(){
-        if (isMobile == false) {
+    if (isMobile == false) {
+        $(window).scroll(function(){
 
             var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
             var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
@@ -451,8 +451,8 @@ $(document).ready(function () {
             } else {
                 document.getElementById('topVid').play();
             };
-        };
-    });
+        });
+    };
 
 
     // Global functions and events
