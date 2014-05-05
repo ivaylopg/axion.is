@@ -398,7 +398,7 @@ $(document).ready(function () {
 
             
             // REMOTE
-            var picSrc = "http://www.ivaylogetov.com/axion/bgseq/" + picNo + ".jpg";
+            var picSrc = "img/bgseq/" + picNo + ".jpg";
             $('#tunnelImg').attr("src",picSrc);
         }
 
@@ -490,12 +490,17 @@ $(document).ready(function () {
                 });
         };
         */
+        
 
         
         // REMOTE
         for (var i = 1; i <= howManyPics; i++) {
-            $.preload( "http://www.ivaylogetov.com/axion/bgseq/" + i + ".jpg");
+
+            var bImage = new Image();
+            bImage.src = "img/bgseq/" + i + ".jpg";
+
         };
+        
         
     })
 

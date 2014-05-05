@@ -230,20 +230,20 @@ p {
 /* SLIDE 1 */
 .slide1 {
 	background-image: url(../img/01.png);
-	padding: 20% 15% 5% 45%;
+	padding: 10% 15% 5% 45%;
 }
 
 /* SLIDE 1 */
 .slide2 {
 	background-image: url(../img/02.png);
-	padding: 20% 45% 5% 15%;
+	padding: 10% 45% 5% 15%;
 }
 
 /* SLIDE 1 */
 .slide3 {
 	height: 70%;
 	background-image: url(../img/03.png);
-	padding: 20% 15% 5% 45%;
+	padding: 10% 15% 5% 45%;
 	z-index: 3;
 }
 
@@ -666,6 +666,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	height: 2px;
 }
 
+.slideContent {
+	position: relative;
+}
+
 @media (max-width: 1500px) {
 	body {
 		font-size: 12px;
@@ -673,27 +677,32 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 	.slide1 {
 		/*background-image: url(../img/01.png);*/
-		padding: 20% 15% 5% 30%;
+		padding: 10% 15% 5% 30%;
 	}
 
 	/* SLIDE 1 */
 	.slide2 {
 		/*background-image: url(../img/02.png);*/
-		padding: 20% 30% 5% 15%;
+		padding: 10% 30% 5% 15%;
 	}
 
 	/* SLIDE 1 */
 	.slide3 {
 		/*background-image: url(../img/03.png);*/
-		padding: 20% 15% 5% 30%;
+		padding: 10% 15% 5% 30%;
+	}
 }
 
 @media (max-height: 800px) {
 
+	body {
+		font-size: 11px;
+	}
+
 	.slide1,
-	.slide2
+	.slide2,
 	.slide3 {
-		padding-top: 10%;
+		padding-top: 5%;
 	}
 }
 
