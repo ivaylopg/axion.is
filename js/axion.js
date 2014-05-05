@@ -30,48 +30,56 @@ $(document).ready(function () {
 
     
     var isMobile = false;
+    var uA = navigator.userAgent;
 
     if (jQuery.browser.mobile == true) {
-        isMobile = jQuery.browser.mobile;
+        isMobile = true;
     };
-    
+
+    if (uA.indexOf("iPad") > 0 || uA.indexOf("ipad") > 0 || uA.indexOf("iPhone") > 0 || uA.indexOf("iphone") > 0 || uA.indexOf("Mobile") > 0 || uA.indexOf("mobile") > 0 || uA.indexOf("droid") > 0) {
+        //console.log("HIT");
+        isMobile = true;
+    };
+
     if (isMobile == true) {
         $("#topVid").remove();
     };
 
-
-    // start skrollr
-    var s = skrollr.init({
-        forceHeight: false,
-        smoothScrolling: false,
-        constants: {
-            blogTop: function() {
-                return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+    var s;
+    if (isMobile == false) {
+        // start skrollr
+        s = skrollr.init({
+            forceHeight: false,
+            smoothScrolling: false,
+            constants: {
+                blogTop: function() {
+                    return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+                },
+                blogBottom: function() {
+                    return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
+                },
+                blogHeight: function() {
+                    var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
+                    var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
+                    return b - t;
+                }
             },
-            blogBottom: function() {
-                return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-            },
-            blogHeight: function() {
-                var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
-                var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-                return b - t;
+            easing: {
+                easeInQuad: function (p) { return p*p },
+                easeOutQuad: function (p) { return p*(2-p) },
+                easeInOutQuad: function (p) { return p<.5 ? 2*p*p : -1+(4-2*p)*p },
+                easeInCubic: function (p) { return p*p*p },
+                easeOutCubic: function (p) { return (--p)*p*p+1 },
+                easeInOutCubic: function (p) { return p<.5 ? 4*p*p*p : (p-1)*(2*p-2)*(2*p-2)+1 },
+                easeInQuart: function (p) { return p*p*p*p },
+                easeOutQuart: function (p) { return 1-(--p)*p*p*p },
+                easeInOutQuart: function (p) { return p<.5 ? 8*p*p*p*p : 1-8*(--p)*p*p*p },
+                easeInQuint: function (p) { return p*p*p*p*p },
+                easeOutQuint: function (p) { return 1+(--p)*p*p*p*p },
+                easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
             }
-        },
-        easing: {
-            easeInQuad: function (p) { return p*p },
-            easeOutQuad: function (p) { return p*(2-p) },
-            easeInOutQuad: function (p) { return p<.5 ? 2*p*p : -1+(4-2*p)*p },
-            easeInCubic: function (p) { return p*p*p },
-            easeOutCubic: function (p) { return (--p)*p*p+1 },
-            easeInOutCubic: function (p) { return p<.5 ? 4*p*p*p : (p-1)*(2*p-2)*(2*p-2)+1 },
-            easeInQuart: function (p) { return p*p*p*p },
-            easeOutQuart: function (p) { return 1-(--p)*p*p*p },
-            easeInOutQuart: function (p) { return p<.5 ? 8*p*p*p*p : 1-8*(--p)*p*p*p },
-            easeInQuint: function (p) { return p*p*p*p*p },
-            easeOutQuint: function (p) { return 1+(--p)*p*p*p*p },
-            easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
-        }
-    });
+        });
+    };
 
 
 
@@ -80,6 +88,9 @@ $(document).ready(function () {
         var blogData = "";
         var postCount = 0;
         var maxPosts = 3;
+        if (isMobile == true) {
+            maxPosts = 1;
+        };
 
         for (var i = 0; i < tumblr_api_read.posts.length; i++) {
 
@@ -126,7 +137,7 @@ $(document).ready(function () {
             };              
         };
         // Create the blog posts
-        if (postCount > 1) {
+        if (postCount >= 1) {
 
             blogData = blogData + '<div class="blogEntry"><div class="divider"></div><p><br />&nbsp;</p>'
             blogData = blogData + '<span class="blogFoot">See more updates on our <a href="http://axionexperience.tumblr.com/"target="_blank">tumblr</a></span></div>';
@@ -138,10 +149,17 @@ $(document).ready(function () {
             });
 
             $("#blogContent").css("visibility","visible");
+
             $("#mediaInfo").css({
               "width": "auto",
               "left": "58%"
             });
+
+            if (isMobile == true) {
+                $(".slideB").css("padding-top","5%");
+                $("#mediaInfo").css("top","10%");
+            }
+
             $("#mediaInfo").attr({
               "data-top-top": "top: 2%;",
               "data-bottom-bottom": "top: 60%;",
@@ -149,7 +167,9 @@ $(document).ready(function () {
             });
 
             // Probably don't need this here:
-            s.refresh();
+            if (isMobile == false) {
+                s.refresh();
+            }
         };
         
     } else {
@@ -335,30 +355,36 @@ $(document).ready(function () {
         $(this).attr("poster","");
     });
 
-    // get rid of status bar for the initial navigation links (becasue they're so close to the bottom it gets in the way)
-    $("#topNav a").each(function() {
-        $(this).removeAttr("href");
-        $(this).css("cursor","pointer");
-    });
 
-    // animate scrolling for navigation links
-    $("#topNav a, #fixedNav a").click(function( event ) {
-        event.preventDefault();
-        var scrollTime = ($("#blog").outerHeight() / $("#info").outerHeight()) + 4500;
-        //var d = $(this).attr('href');
-        var d = "#" + $(this).attr('data-target');
-        //console.log(d);
+    
+    if (isMobile == false) {
+        // get rid of status bar for the initial navigation links (becasue they're so close to the bottom it gets in the way)
+        $("#topNav a").each(function() {
+            $(this).removeAttr("href");
+            $(this).css("cursor","pointer");
+        });
 
-        if (d=="#info") {
-            s.animateTo(s.relativeToAbsolute(document.getElementById('info'), 'top', 'top'), {duration: 1500, easing: "easeInOutQuart"});
-        } else if (d=="#who") {
-            s.animateTo(s.relativeToAbsolute(document.getElementById('who'), 'top', 'top'), {duration: 3000, easing: "easeInOutQuart"});
-        } else if (d=="#blog") {
-            s.animateTo(s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top'), {duration: 4500, easing: "easeInOutQuart"});
-        } else if (d=="#contact") {
-            s.animateTo(s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top'), {duration: scrollTime, easing: "easeInOutQuart"});
-        }
-    }); 
+        // animate scrolling for navigation links
+        $("#topNav a, #fixedNav a").click(function( event ) {
+            event.preventDefault();
+            var scrollTime = ($("#blog").outerHeight() / $("#info").outerHeight()) + 4500;
+            //var d = $(this).attr('href');
+            var d = "#" + $(this).attr('data-target');
+            //console.log(d);
+
+            if (d=="#info") {
+                s.animateTo(s.relativeToAbsolute(document.getElementById('info'), 'top', 'top'), {duration: 1500, easing: "easeInOutQuart"});
+            } else if (d=="#who") {
+                s.animateTo(s.relativeToAbsolute(document.getElementById('who'), 'top', 'top'), {duration: 3000, easing: "easeInOutQuart"});
+            } else if (d=="#blog") {
+                s.animateTo(s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top'), {duration: 4500, easing: "easeInOutQuart"});
+            } else if (d=="#contact") {
+                s.animateTo(s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top'), {duration: scrollTime, easing: "easeInOutQuart"});
+            }
+        }); 
+    };
+
+    
 
     $("#topNav a").hover(
       function() {
@@ -378,46 +404,47 @@ $(document).ready(function () {
 
     // This is the hallway animation
     $(window).scroll(function(){
-
-        var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
-        var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
-
-        var maxPics = howManyPics;
-        var value = (posFromTop/totHeight) * maxPics;
-        var picNo = 1;
-        if (Math.ceil(value) <= 0) {
-            picNo = 1;
-        } else if (Math.ceil(value) > 0 && Math.ceil(value) <= maxPics){
-            picNo = Math.ceil(value);
-        } else {
-            picNo = maxPics;
-        }
-
-        if (picNo != whichPic) {
-            whichPic = picNo;
-
-            
-            
-
-            /*
-            // LOCAL
-            var picSrc = "img/bgseq/" + picNo + ".jpg";
-            var doesExist = $("#plImg1" + picNo ).attr('data-loaded');
-            
-            if (doesExist == "loaded") {
-                $('#tunnelImg').attr("src",picSrc);
-            };
-
-            */
-
-            
-            // REMOTE
-            var picSrc = "img/bgseq/" + picNo + ".jpg";
-            $('#tunnelImg').attr("src",picSrc);
-        }
-
-
         if (isMobile == false) {
+
+            var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+            var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+
+            var maxPics = howManyPics;
+            var value = (posFromTop/totHeight) * maxPics;
+            var picNo = 1;
+            if (Math.ceil(value) <= 0) {
+                picNo = 1;
+            } else if (Math.ceil(value) > 0 && Math.ceil(value) <= maxPics){
+                picNo = Math.ceil(value);
+            } else {
+                picNo = maxPics;
+            }
+
+            if (picNo != whichPic) {
+                whichPic = picNo;
+
+                
+                
+
+                /*
+                // LOCAL
+                var picSrc = "img/bgseq/" + picNo + ".jpg";
+                var doesExist = $("#plImg1" + picNo ).attr('data-loaded');
+                
+                if (doesExist == "loaded") {
+                    $('#tunnelImg').attr("src",picSrc);
+                };
+
+                */
+
+                
+                // REMOTE
+                var picSrc = "img/bgseq/" + picNo + ".jpg";
+                $('#tunnelImg').attr("src",picSrc);
+            }
+
+
+        
             if ($(window).scrollTop() > s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top')) {
             //if ($(window).scrollTop() > 100) {
                 document.getElementById('topVid').pause();
@@ -493,7 +520,10 @@ $(document).ready(function () {
 
     $(window).load(function(){
         //s.refresh();
-        s.refresh($("#blog"));
+        if (isMobile == false) {
+            s.refresh($("#blog"));
+        }
+        
 
         /*
         // LOCAL
