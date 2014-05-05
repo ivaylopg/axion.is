@@ -688,6 +688,15 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 		padding: 20% 15% 5% 30%;
 }
 
+@media (max-height: 800px) {
+
+	.slide1,
+	.slide2
+	.slide3 {
+		padding-top: 10%;
+	}
+}
+
 
 
 
