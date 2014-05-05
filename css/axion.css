@@ -575,9 +575,9 @@ p {
 
 .logoImages {
 	display: inline-block;
-	width: 33%;
+	width: 32%;
 	height: auto;
-	padding: 1%;
+	padding-left: 1%;
 }
 
 .logoImages img {
@@ -666,8 +666,27 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	height: 2px;
 }
 
+@media (max-width: 1500px) {
+	body {
+		font-size: 12px;
+	}
 
+	.slide1 {
+		/*background-image: url(../img/01.png);*/
+		padding: 20% 15% 5% 30%;
+	}
 
+	/* SLIDE 1 */
+	.slide2 {
+		/*background-image: url(../img/02.png);*/
+		padding: 20% 30% 5% 15%;
+	}
+
+	/* SLIDE 1 */
+	.slide3 {
+		/*background-image: url(../img/03.png);*/
+		padding: 20% 15% 5% 30%;
+}
 
 
 
