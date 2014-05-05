@@ -426,7 +426,7 @@ if (isMobile == false) {
     // This is the hallway animation
     if (isMobile == false) {
         $(window).scroll(function(){
-
+            
             var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
             var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
 
