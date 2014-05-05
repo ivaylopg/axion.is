@@ -526,9 +526,9 @@ p {
 
 .logoImages {
 	display: inline-block;
-	width: 33%;
+	width: 32%;
 	height: auto;
-	padding: 1%;
+	padding-left: 1%;
 }
 
 .logoImages img {
@@ -619,7 +619,28 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 
 @media (max-width: 1500px) {
-  .slideB {
+	body {
+		font-size: 12px;
+	}
+
+	.slide1 {
+		/*background-image: url(../img/01.png);*/
+		padding: 10% 15% 5% 30%;
+	}
+
+	/* SLIDE 1 */
+	.slide2 {
+		/*background-image: url(../img/02.png);*/
+		padding: 10% 30% 5% 15%;
+	}
+
+	/* SLIDE 1 */
+	.slide3 {
+		/*background-image: url(../img/03.png);*/
+		padding: 10% 15% 5% 30%;
+	}
+
+	.slideB {
 		padding: 10% 15% 5% 15%;
 	}
 }
@@ -630,4 +651,16 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
+@media (max-height: 800px) {
+
+	body {
+		font-size: 11px;
+	}
+
+	.slide1,
+	.slide2,
+	.slide3 {
+		padding-top: 10%;
+	}
+}
 

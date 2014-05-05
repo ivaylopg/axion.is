@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     // [x] We still have to implement preload for the hallway!
     // [x] Add video and text posts for the blog
-    // [ ] Tumblr version of page
+    // [x] Tumblr version of page
     // [ ] Gif replacement of video
     // [x] Stop video play when not visible
     // [ ] buttons/logos over video
@@ -398,7 +398,7 @@ $(document).ready(function () {
 
             
             // REMOTE
-            var picSrc = "http://www.ivaylogetov.com/axion/bgseq/" + picNo + ".jpg";
+            var picSrc = "img/bgseq/" + picNo + ".jpg";
             $('#tunnelImg').attr("src",picSrc);
         }
 
@@ -490,12 +490,17 @@ $(document).ready(function () {
                 });
         };
         */
+        
 
         
         // REMOTE
         for (var i = 1; i <= howManyPics; i++) {
-            $.preload( "http://www.ivaylogetov.com/axion/bgseq/" + i + ".jpg");
+
+            var bImage = new Image();
+            bImage.src = "img/bgseq/" + i + ".jpg";
+
         };
+        
         
     })
 
