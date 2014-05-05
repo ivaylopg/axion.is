@@ -16,13 +16,13 @@ p {
 
 #skrollr-body {
 	width: auto;
-	height: 100%;
+	height: auto;
 }
 
 .header {
 	display: block;
 	width: 100%;
-	height: 100%;
+	height: 600px;
 	position: relative;
 	overflow: hidden;
 	background-image: url("../img/cover.png");
