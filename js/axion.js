@@ -23,6 +23,10 @@ $(document).ready(function () {
     // [ ] social media links?
     // [ ] narrower BG images
     // [ ] clean up all code!
+    // [ ] make sure you are using mini versions of all js
+    // [ ] scroll-to as a function of where you are on the page....
+    // [ ] optimize for iphone
+    // [ ] add "reblogged from" to site preview?
 
 
     // start skrollr
