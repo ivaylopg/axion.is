@@ -1,13 +1,13 @@
 $(document).ready(function () {
 
 
-    // [ ] We still have to implement preload for the hallway!
+    // [x] We still have to implement preload for the hallway!
     // [x] Add video and text posts for the blog
     // [ ] Tumblr version of page
     // [ ] Gif replacement of video
     // [x] Stop video play when not visible
     // [ ] buttons/logos over video
-    // [ ] add correct quotes
+    // [x] add correct quotes
     // [x] add footer to blog
     // [ ] get rid of unused fonts
     // [ ] add licence and credits to code
@@ -16,11 +16,12 @@ $(document).ready(function () {
     // [x] link to github
     // [x] mailchimp
     // [x] fix press links
-    // [ ] update axion blog
+    // [x] update axion blog
     // [x] add non-blog mode and set as default.
     // [x] add paralax to screening/press section
     // [x] side Nav
     // [ ] social media links?
+    // [ ] narrower BG images
     // [ ] clean up all code!
 
 
@@ -152,7 +153,7 @@ $(document).ready(function () {
       onready: function() {
         clip1 = soundManager.createSound({
           id: 'aSound',
-          url: 'audio/walking.mp3',
+          url: 'audio/q1.mp3',
           multiShot: false,
           onfinish: function() {
             playDrawer(1,0);
@@ -168,7 +169,7 @@ $(document).ready(function () {
 
         clip2 = soundManager.createSound({
           id: 'bSound',
-          url: 'audio/rain.mp3',
+          url: 'audio/q2.mp3',
           multiShot: false,
           onfinish: function() {
             playDrawer(2,0);
@@ -184,7 +185,7 @@ $(document).ready(function () {
 
         clip3 = soundManager.createSound({
           id: 'cSound',
-          url: 'audio/going_outside.mp3',
+          url: 'audio/q3.mp3',
           multiShot: false,
           onfinish: function() {
             playDrawer(3,0);
@@ -200,7 +201,7 @@ $(document).ready(function () {
 
         clip4 = soundManager.createSound({
           id: 'dSound',
-          url: 'audio/bass.mp3',
+          url: 'audio/q4.mp3',
           multiShot: false,
           onfinish: function() {
             playDrawer(4,0);
@@ -311,11 +312,6 @@ $(document).ready(function () {
 
 
 
-
-
-    // keep track of which hallway image is active
-    var whichPic = 1;
-
     // once video is loaded and playing, get rid of poster frame to eliminate stutter on loop
     $(".vidCover").on("play", function(){
         $(this).attr("poster","");
@@ -357,12 +353,18 @@ $(document).ready(function () {
       }
     );
 
+
+    // keep track of which hallway image is active
+    var whichPic = 1;
+    var howManyPics =29;
+
     // This is the hallway animation
     $(window).scroll(function(){
+
         var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
         var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
 
-        var maxPics = 29;
+        var maxPics = howManyPics;
         var value = (posFromTop/totHeight) * maxPics;
         var picNo = 1;
         if (Math.ceil(value) <= 0) {
@@ -376,14 +378,24 @@ $(document).ready(function () {
         if (picNo != whichPic) {
             whichPic = picNo;
 
+            
+            
+
+            /*
+            // LOCAL
             var picSrc = "img/bgseq/" + picNo + ".jpg";
+            var doesExist = $("#plImg1" + picNo ).attr('data-loaded');
+            
+            if (doesExist == "loaded") {
+                $('#tunnelImg').attr("src",picSrc);
+            };
+
+            */
+
+            
+            // REMOTE
+            var picSrc = "http://www.ivaylogetov.com/axion/bgseq/" + picNo + ".jpg";
             $('#tunnelImg').attr("src",picSrc);
-
-            //var picSrc = "url(img/bgseq/" + picNo + ".jpg)";
-            //$('.slideB').css("background-image",picSrc);
-
-            //console.log(picSrc);
-            //console.log(picNo);
         }
 
 
@@ -462,7 +474,28 @@ $(document).ready(function () {
     $(window).load(function(){
         //s.refresh();
         s.refresh($("#blog"));
+
+        /*
+        // LOCAL
+        for (var i = 1; i < howManyPics+1; i++) {
+            $('<img />')
+                //.attr({'src': 'img/bgseq/' + i + '.jpg','width':'2px','height':'auto','data-loaded':'loaded','id':'plImg' + i})
+                .attr({'src': 'img/bgseq/' + i + '.jpg','width':'2px','height':'auto','data-loaded':'loaded','id':'plImg' + i})
+                .load(function(){
+                    $('#preloadHolder').append( $(this) );
+                });
+        };
+        */
+
+        
+        // REMOTE
+        for (var i = 1; i <= howManyPics; i++) {
+            $.preload( "http://www.ivaylogetov.com/axion/bgseq/" + i + ".jpg");
+        };
+        
     })
+
+
     
 
 });

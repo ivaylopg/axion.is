@@ -655,6 +655,17 @@ background-image: none;
 font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
+#preloadHolder {
+	display: block;
+	position: fixed;
+	top: 0px;
+	left: -400px;
+	opacity: 0;
+	visibility: hidden;
+	width: 2px;
+	height: 2px;
+}
+
 
 
 
