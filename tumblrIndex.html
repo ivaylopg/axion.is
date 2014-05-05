@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Axion</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--Custom CSS-->
+    <!--<link href='http://fonts.googleapis.com/css?family=Roboto:300,500|Pontano+Sans|Exo+2:400,200|Droid+Serif:700|Merriweather:700' rel='stylesheet' type='text/css'>-->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,300,400,500|Merriweather:700' rel='stylesheet' type='text/css'>
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/axionBlog.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body id="skrollr-body">
+
+    <div class="header">
+          <video id="topVid" autoplay loop muted preload="auto" id="intro" class="vidCover" poster="img/axionHeader.jpg">
+            <source src="mov/axionHeader.mp4" type="video/mp4">
+            <source src="mov/axionHeader.webm" type="video/webm">
+          </video>
+          <img id="topImg" src="img/axionHeader.jpg" />
+          <div id="topNav"><a href="#info" data-target="info" data-label="About"><span class="glyphicon glyphicon-info-sign"></span></a>&nbsp;<a href="#who" data-target="who" data-label="Credits"><span class="glyphicon glyphicon-user"></span></a>&nbsp;<a href="#blog" data-target="blog" data-label="News"><span class="glyphicon glyphicon-comment"></span></a>&nbsp;<a href="#contact" data-target="contact" data-label="Get Updates"><span class="glyphicon glyphicon-envelope"></span></a>&nbsp;<a href="#contact" data-target="contact" data-label="Download"><span class="glyphicon glyphicon-cloud-download"></span></a><div class="navLabel"></div></div>
+          <!--<div id="topNav"><a href="#info"><i class="fa fa-info-circle fa-fw"></i></a>&nbsp;<a href="#who"><i class="fa fa-users fa-fw"></i></a>&nbsp;<a href="#"><i class="fa fa-envelope fa-fw"></i></a>&nbsp;<a href="#"><i class="fa fa-cloud-download fa-fw"></i></a></div>-->
+    </div>
+<!--glyphicon glyphicon-download-alt || glyphicon glyphicon-user-->
+
+<div id="underVideo" class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="off">
+  <div id="qc1" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off">
+    <p>
+    We are at a stage where, as experimentalists, we are a bit lost because there is not a real theory out there which says, 'you should look in this direction.' We are looking. I am looking in the dark. 
+    </p>
+    <footer>Professor Elena Aprile</footer>
+  </div>
+  <div class="quotePlay" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off" data-anchor-target="#qc1">
+    <input id="dial1" class="dial" data-width="100%" value="0">
+    <div class="playIcon">
+      <span class="playbutton glyphicon glyphicon-play" id="clip1">
+    </div>
+  </div>
+</div>
+
+<!--
+
+<div id="info" class="slide slide1" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
+  <div class="clearBack">
+    <p>
+      <span class="b">A meditative exploration of the scientific method and human metamorphosis, <span class="b t">Axion</span> invites a player to immerse themselves in a unique audiovisual world and reflect on their journey. </span>
+    </p>
+    <p>
+      Axion is a unique, app-based interactive documentary. Players explore a series of environments to gradually discover documentary content featuring scientists and researchers working in the fields of dark matter and dark energy, as well as experiencing abstract content that reacts to and informs these interviews. 
+    </p>
+    <p>
+      In addition to allowing the player to consciously explore, the app will also attempt to infer the user's state of mind using EEG biofeedback, and choose experiences that he or she may be more receptive to. This guarantees that no two players can have the same experience, and that even a single player will have different experiences each time they play. 
+    </p>
+    <p>
+      By allowing a player to discover the thoughts and statements of these scientists, we hope to draw a parallel between the visual poetry and the scientific language, illuminating a creative and expressive side of the discussion that is often not showcased, or that most people outside the scientific community do not hear. 
+    </p>
+    <p>
+      <br />&nbsp;
+    </p>
+    <p>
+      <span class="b">We want to leave the viewer not with answers, but with a sense that it is acceptable to be uncertain - realizing that the method of science is not the ultimate source of answers, but rather a way to ask questions.</span>
+    </p>
+  </div>
+</div>
+
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="off">
+  <div id="qc2" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off">
+    <p>
+    We have all reasons to believe that dark matter is real... If dark matter is a particle, it is its own anti-particle, so it's matter and antimatter at the same time. As two galaxies collide, the ordinary matter actually collides, and you see the other component, the one that interacts so little, just passing through each other...like the other one wasn't there.
+    </p>
+    <footer>Professor Martin Pohl</footer>
+  </div>
+  <div class="quotePlay" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off" data-anchor-target="#qc2">
+    <input id="dial2" class="dial" data-width="100%" value="0">
+    <div class="playIcon">
+      <span class="playbutton glyphicon glyphicon-play" id="clip2">
+    </div>
+  </div>
+</div>
+
+<div id="who" class="slide slide2" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
+  <div class="clearBack">
+    <p>
+      <span class="w b">Creators</span><br />
+      RAIN ASHFORD, IVAYLO GETOV, KYLE GUSTAFSON, <br />JASMINE IDUN LYMAN, JULIAN MACIEJEWSKI, JASON WISHNOW<br />&nbsp;
+    </p>
+    <p>
+      <span class="l">
+        RAIN ASHFORD<br />IVAYLO GETOV<br />KYLE GUSTAFSON<br />JASMINE IDUN LYMAN<br />JULIAN MACIEJEWSKI<br />JASON WISHNOW
+        <span class="w r">
+          INTERACTIVITY DEVELOPMENT<br />SOFTWARE &amp; VISUAL DESIGN<br />SCIENCE ADVISOR<br />EXPERIENCE DESIGN<br />SOFTWARE DEVELOPMENT<br />CREATIVE DEVELOPMENT
+        </span>
+      </span>
+      <br /><br />&nbsp;
+    </p>
+    <p>
+      <span class="w b">Scientists</span><br />
+      PROFESSOR MARTIN POHL<br />
+      <span class="w">DIRECTOR of the NUCLEAR and PARTICLE PHYSICS DEPARTMENT, UNIVERSITY OF GENEVA</span><br /><br />
+      DR. MARK WYMAN<br />
+      <span class="w">AMES ARTHUR POSTDOCTORAL FELLOW, NYU</span><br /><br />
+      PROFESSOR ELENA APRILE<br />
+      <span class="w">CO-DIRECTOR, COLUMBIA ASTROPHYSICS LABORATORY, COLUMBIA UNIVERSITY</span><br /><br />&nbsp;
+    </p>
+    <p>
+      <span class="w b">Thank You:</span><br />
+      <span class="mix">NEAL HARTMAN at CERN; OPEYEMI OLUKEMI, INGRID KOPP, and AMELIE LEENHARDT at TRIBECA FILM INSTITUTE;
+      NATASHA RODRIGUEZ-BACCHUS (LOGO DESIGN); MACIEJ MUSZKOWSKI (PROGRAMMING HELP); ZACH CALDWELL (VIDEOGRAPHY);
+      JOONA KURIKKA at the CERN IDEALAB; EVERYBODY AT CERN, CINEGLOBE, AND TFI.<br /><br />&nbsp;
+      </span>
+    </p>
+  </div>
+</div>
+
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="off">
+  <div id="qc3" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off">
+    <p>
+    I mean, I've come to the view myself where Theoretical Physics is almost a sort of, kind of wierd representational art form. In the sense that this gets to the heart of what Theoretical Physics does today faster than telling someone you're a 'scientist.' 
+    </p>
+    <footer>Dr. Mark Wyman</footer>
+  </div>
+  <div class="quotePlay" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off" data-anchor-target="#qc3">
+    <input id="dial3" class="dial" data-width="100%" value="0">
+    <div class="playIcon">
+      <span class="playbutton glyphicon glyphicon-play" id="clip3">
+    </div>
+  </div>
+</div>
+-->
+<div id="blog" class="slide slideB" data-bottom-top="padding-top: 10%;" data-top-top="padding-top: 10%;">
+  <div id="tunnel" data-top-top="top: 0%;" data--100p-bottom-bottom="top: 100%;" data-anchor-target="#blog">
+    <img id="tunnelImg" src="img/bgseq/1.jpg" />
+  </div>
+  
+  <div id="blogContent" data-bottom-top="top: 0px;" data-top-top="top: -200px;" data-anchor-target="#blog">
+  </div>
+
+  <div id="mediaInfo" class="clearBack">
+    <span class="t">Press</span>
+    <div class="divider"></div>
+    <p>
+      <span class="w l mix"><a href="http://www.bbc.co.uk/programmes/p01tmmzv" target="_blank">BBC World Service</a></span><span class="r mix">"CERN: Story Matter"</span><br />
+      <span class="w l mix"><a href="http://www.bbc.com/news/technology-26938150" target="_blank">BBC News</a></span><span class="r mix">"Filmmakers challenged to make science compelling"</span><br /><br />&nbsp;
+    </p>
+    <span class="t">Screenings</span>
+    <div class="divider"></div>
+    <p>
+      <span class="w l mix"><a href="http://cineglobe.ch/special-events/tribeca-hacks-story-matter/" target="_blank">Mar 19, 2014</a></span><span class="r mix">CineGlobe IFF 2014</span><br />
+      <span class="w l mix"><a href="https://tribecafilminstitute.org/pages/2014_lineup" target="_blank">Apr 26, 2014</a></span><span class="r mix">TFI Interactive 2014</span><br /><br />&nbsp;
+    </p>
+  </div>
+</div>
+
+<div class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="off">
+  <div id="qc4" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off">
+    <p>
+    How can you just face anyone and tell them that we only make up this miserable few percent of the whole matter and energy content of the universe? Of course the normal person says 'and so what?'
+    </p>
+    <footer>Professor Elena Aprile</footer>
+  </div>
+  <div class="quotePlay" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off" data-anchor-target="#qc4">
+    <input id="dial4" class="dial" data-width="100%" value="0">
+    <div class="playIcon">
+      <span class="playbutton glyphicon glyphicon-play" id="clip4">
+    </div>
+  </div>
+</div>
+
+<div id="contact" class="slide slide3" data-bottom-top="padding-top: 40%; background-position: center -700px; opacity: 1;" data-top-top="padding-top: 10%; background-position: center 0px; opacity: 1;"  data-center-bottom="padding-top: 10%; background-position: center 350px; opacity: 1;" data-top-bottom="padding-top: 10%; background-position: center 700px; opacity: 0;">
+  <div class="clearBack">
+    <p>
+      <span class="b">Stay Connected</span>
+    </p>
+    <p>
+      Sign up to receive updates as we continue the development of <span class="b t w">Axion</span> and to be the first to know about screenings and demonstrations.<br /> &nbsp;
+    </p>
+
+    <!-- Begin MailChimp Signup Form -->
+    <form class="validate form-inline" role="form" action="http://axion.us8.list-manage.com/subscribe/post?u=a7c1ccb8b5c5da7709271c307&amp;id=c6db38bc0a" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank" novalidate>
+      <label for="mce-EMAIL" class="sr-only">Join our mailing list</label>
+      <div class="input-group">
+        <input type="email" value="" name="EMAIL" class="email form-control textEnter" id="mce-EMAIL" placeholder="Join our mailing list" required>
+        <span class="input-group-btn">
+          <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button btn btn-default">
+        </span>
+      </div>
+      <div style="position: absolute; left: -5000px;">
+        <input type="text" name="b_a7c1ccb8b5c5da7709271c307_c6db38bc0a" value="" class="textEnter">
+      </div>
+    </form>
+    <!--End mc_embed_signup-->
+
+    <p>
+      <br /><br /><br />
+      <span class="b">Get Axion</span>
+    </p>
+    <p>
+      We are currently in the prototyping and development phase and have not released a publicly available app yet. If you are interested in trying out a beta version, please get in touch. Our source code is released under the MIT licence and can be found on <a href="https://github.com/ivaylopg/Axion" target="_blank">GitHub</a> if you are interested in compiling your own binary.
+    </p>
+    <p>
+      Please send any questions, feedback, and requests for screenings/demonstrations to <a href="mailto:contact@axion.is" target="_blank">contact@axion.is</a>
+    </p>
+
+  </div>
+</div>
+
+<div class="footer" data-bottom-top="background-color:rgb(100,100,100);" data-bottom-bottom="background-color:rgb(26,26,26);">
+  <p id="possible">Made possible with support from:</p>
+
+  <div class="logoImages">
+    <img src="img/tfi.png" />
+  </div>
+  <div class="logoImages">
+    <img src="img/cineglobeFullSquare.png" />
+  </div>
+  <div class="logoImages">
+    <img src="img/hacks.png" />
+  </div>
+  <span class="smallPrint">Website and application source code is released under an MIT licence. Images, audio, and video are released under Creative Commons. © 2014</span>
+</div>
+
+<div id="fixedNav" data-top-top:"opacity: 0; visibility:!hidden" data-top-center="opacity: 0; visibility:!visible" data-top-bottom="opacity: 1; visibility:!visible" data-anchor-target="#underVideo">
+  <a href="#info" data-target="info" data-label="About"><span class="glyphicon glyphicon-info-sign"></span></a></span><br />
+  <a href="#who" data-target="who" data-label="Credits"><span class="glyphicon glyphicon-user"></span></a><br />
+  <a href="#blog" data-target="blog" data-label="News"><span class="glyphicon glyphicon-comment"></span></a><br />
+  <a href="#contact" data-target="contact" data-label="Get Updates"><span class="glyphicon glyphicon-envelope"></span></a><br />
+  <a href="#contact" data-target="contact" data-label="Download"><span class="glyphicon glyphicon-cloud-download"></span></a>
+  <!--<div class="navLabel"></div>-->
+</div>
+<div id="preloadHolder">
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof jQuery == 'undefined') {
+            document.write(unescape("%3Cscript src='js/jquery.min.js' type='text/javascript'%3E%3C/script%3E"));
+        }
+    </script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/soundmanager2.js"></script>
+
+    <script type="text/javascript" src="js/jquery.knob.js"></script>
+
+    <script type="text/javascript" src="js/jquery.fitvids.js"></script>
+
+    <!--<script type="text/javascript" src="http://blog.ivaylogetov.com/api/read/json?jasoncallback=?&start=0&num=10"></script>-->
+    <script type="text/javascript" src="http://axionexperience.tumblr.com/api/read/json?jasoncallback=?&start=0&num=10"></script>
+
+    <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <!--<script type="text/javascript">
+        skrollr.init({
+            forceHeight: false,
+            smoothScrolling: false
+        });
+    </script>-->
+    <script src="js/axion.js"></script>
+  </body>
+</html>
