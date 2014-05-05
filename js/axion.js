@@ -182,7 +182,7 @@ $(document).ready(function () {
             });
 
             // Probably don't need this here:
-            if (isMobile == false && sActive == true;) {
+            if (isMobile == false && sActive == true) {
                 s.refresh();
             }
         };
