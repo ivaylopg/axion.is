@@ -30,7 +30,11 @@ $(document).ready(function () {
 
     
     var isMobile = false;
-    isMobile = jQuery.browser.mobile;
+
+    if (jQuery.browser.mobile == true) {
+        isMobile = jQuery.browser.mobile;
+    };
+    
     if (isMobile == true) {
         $("#topVid").remove();
     };
