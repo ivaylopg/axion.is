@@ -42,6 +42,7 @@ $(document).ready(function () {
     };
 
     if (isMobile == true) {
+        $("#topVid").css({"width":"1px","height":"1px"});
         $("#topVid").remove();
     } else {
         $.getScript("js/skrollr.min.js")
@@ -196,8 +197,11 @@ $(document).ready(function () {
     var clip2;
     var clip3;
     var clip4;
+    var sm;
 
-    var sm = soundManager.setup({
+if (isMobile == false) {
+
+    sm = soundManager.setup({
       url: '../swf/',
       preferFlash: false,
       waitForWindowLoad: true,
@@ -279,6 +283,8 @@ $(document).ready(function () {
         $('.quotePlay').css("visibility","hidden");
       }
     });
+
+};
 
     $(".playbutton").click( function() {
         var w = $(this).attr('id');
