@@ -240,7 +240,7 @@ $(document).ready(function () {
 
             
             // REMOTE
-            var picSrc = "http://www.ivaylogetov.com/axion/bgseq/" + picNo + ".jpg";
+            var picSrc = "http://www.ivaylogetov.com/axionblog/bgseq/" + picNo + ".jpg";
             $('#tunnelImg').attr("src",picSrc);
         }
 
@@ -338,7 +338,7 @@ $(document).ready(function () {
         for (var i = 1; i <= howManyPics; i++) {
 
             var bImage = new Image();
-            bImage.src = "http://www.ivaylogetov.com/axion/bgseq/" + i + ".jpg";
+            bImage.src = "http://www.ivaylogetov.com/axionblog/bgseq/" + i + ".jpg";
 
         };
         
