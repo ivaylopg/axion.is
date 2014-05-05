@@ -45,6 +45,7 @@ $(document).ready(function () {
         $("#topVid").css({"width":"1px","height":"1px"});
         $("#topVid").remove();
     } else {
+        /*
         $.getScript("js/skrollr.min.js")
           .done(function( script, textStatus ) {
             console.log( textStatus );
@@ -53,10 +54,13 @@ $(document).ready(function () {
           .fail(function( jqxhr, settings, exception ) {
             console.log( exception );
         });
+        */
+        startSkrollr();
     };
 
     var s;
-    var sActive = false;
+    var sActive;
+
     function startSkrollr(){
         if (isMobile == false) {
             // start skrollr
@@ -91,7 +95,6 @@ $(document).ready(function () {
                     easeInOutQuint: function (p) { return p<.5 ? 16*p*p*p*p*p : 1+16*(--p)*p*p*p*p }
                 }
             });
-            
             sActive = true;
         };
     };
@@ -427,8 +430,18 @@ if (isMobile == false) {
     if (isMobile == false) {
         $(window).scroll(function(){
             
-            var posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
-            var totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+            var posFromTop;
+            var totHeight;
+
+            if (sActive == true) {
+                posFromTop = $(window).scrollTop() - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+                totHeight = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom') - s.relativeToAbsolute(document.getElementById('blog'), 'bottom', 'top');
+            } else {
+                posFromTop = 1;
+                totHeight = 1;
+            };
+
+            console.log(sActive);
 
             var maxPics = howManyPics;
             var value = (posFromTop/totHeight) * maxPics;
@@ -465,13 +478,20 @@ if (isMobile == false) {
             }
 
 
-        
-            if ($(window).scrollTop() > s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top')) {
-            //if ($(window).scrollTop() > 100) {
-                document.getElementById('topVid').pause();
+            if (sActive == true) {
+                if ($(window).scrollTop() > s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top')) {
+                    document.getElementById('topVid').pause();
+                } else {
+                    document.getElementById('topVid').play();
+                };
             } else {
-                document.getElementById('topVid').play();
+                if ($(window).scrollTop() > $("#topVid").height()) {
+                    document.getElementById('topVid').pause();
+                } else {
+                    document.getElementById('topVid').play();
+                };
             };
+            
         });
     };
 
