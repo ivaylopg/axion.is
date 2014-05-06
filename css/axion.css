@@ -797,6 +797,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	#info p {
 		font-size: 100%;
 	}
+
+	#who p .w {
+		font-weight: 300;
+	}
 }
 
 @media only screen and (max-height : 568px) and (max-width : 568px){ 
