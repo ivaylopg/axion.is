@@ -29,7 +29,7 @@ $(document).ready(function () {
     // [ ] add "reblogged from" to site preview?
 
     
-    var isMobile = false;
+    var isMobile = true;
     var uA = navigator.userAgent;
 
     if (jQuery.browser.mobile == true) {
@@ -52,6 +52,7 @@ $(document).ready(function () {
         $("#tunnelImg").css("height","100%");
         $("#tunnel").css({"height":"100%","opacity":"0.2"});
     } else {
+        /*
         $.getScript("js/skrollr.min.js")
           .done(function( script, textStatus ) {
             console.log( textStatus );
@@ -60,8 +61,8 @@ $(document).ready(function () {
           .fail(function( jqxhr, settings, exception ) {
             console.log( exception );
         });
-        
-        //startSkrollr();
+        */
+        startSkrollr();
     };
 
     var s;
@@ -113,7 +114,10 @@ $(document).ready(function () {
         var blogData = "";
         var postCount = 0;
         var maxPosts = 3;
-        if (isMobile == true) {
+
+        if (uA.indexOf("iPhone") > 0 || uA.indexOf("iphone") > 0) {
+            maxPosts = 2;
+        } else if (isMobile == true) {
             maxPosts = 1;
         };
 
@@ -433,9 +437,10 @@ if (isMobile == false) {
     var howManyPics =29;
 
     // This is the hallway animation
-    if (isMobile == false) {
-        $(window).scroll(function(){
-            
+   
+    $(window).scroll(function(){
+        if (isMobile == false) {
+        
             var posFromTop;
             var totHeight;
 
@@ -447,7 +452,7 @@ if (isMobile == false) {
                 totHeight = 1;
             };
 
-            console.log(sActive);
+            //console.log(sActive);
 
             var maxPics = howManyPics;
             var value = (posFromTop/totHeight) * maxPics;
@@ -462,23 +467,6 @@ if (isMobile == false) {
 
             if (picNo != whichPic) {
                 whichPic = picNo;
-
-                
-                
-
-                /*
-                // LOCAL
-                var picSrc = "img/bgseq/" + picNo + ".jpg";
-                var doesExist = $("#plImg1" + picNo ).attr('data-loaded');
-                
-                if (doesExist == "loaded") {
-                    $('#tunnelImg').attr("src",picSrc);
-                };
-
-                */
-
-                
-                // REMOTE
                 var picSrc = "img/bgseq/" + picNo + ".jpg";
                 $('#tunnelImg').attr("src",picSrc);
             }
@@ -497,9 +485,9 @@ if (isMobile == false) {
                     document.getElementById('topVid').play();
                 };
             };
-            
-        });
-    };
+        };
+    });
+    
 
 
     // Global functions and events
@@ -571,25 +559,7 @@ if (isMobile == false) {
             s.refresh();
             //s.refresh($("#blog"));
         }
-        
-
-        /*
-        // LOCAL
-        for (var i = 1; i < howManyPics+1; i++) {
-            $('<img />')
-                //.attr({'src': 'img/bgseq/' + i + '.jpg','width':'2px','height':'auto','data-loaded':'loaded','id':'plImg' + i})
-                .attr({'src': 'img/bgseq/' + i + '.jpg','width':'2px','height':'auto','data-loaded':'loaded','id':'plImg' + i})
-                .load(function(){
-                    $('#preloadHolder').append( $(this) );
-                });
-        };
-        */
-        
-
-        
-        // REMOTE
         for (var i = 1; i <= howManyPics; i++) {
-
             var bImage = new Image();
             bImage.src = "img/bgseq/" + i + ".jpg";
 
