@@ -811,5 +811,13 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 }
 
+@media only screen and (max-height : 400px) and (max-width : 568px){ 
+
+	.footer {
+		height: 70%;
+	}
+
+}
+
 
 
