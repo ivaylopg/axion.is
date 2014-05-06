@@ -746,7 +746,62 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
+/* iPhones */
+@media only screen and (max-width : 568px) { 
+	#topNav {
+		visibility: hidden;
+	}
 
+	.quote {
+		font-size: 120%;
+		padding: 4% 4% 4% 4%;
+	}
+
+	.slide {
+		height: 200%;
+		padding: 4% 4% 4% 4%;
+	}
+
+	.bgHolder {
+		background-position: 30% 0%;
+	}
+
+	.slide2 .bgHolder {
+		background-position: 80% 0%;
+	}
+
+
+	#tunnel {
+		visibility: hidden;
+	}
+
+	.slideB {
+		height: auto;
+		background-image: url(../img/bgseq/1.jpg);
+		background-repeat: no-repeat;
+		background-position: 50% 0px;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	.footer {
+		padding: 1% 10% 2% 10%;
+	}
+
+	form {
+		width: 90%;
+	}
+}
+
+@media only screen and (max-height : 568px) and (max-width : 568px){ 
+
+	.footer {
+		height: 50%;
+	}
+
+}
 
 
 
