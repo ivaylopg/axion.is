@@ -758,7 +758,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 
 	.slide {
-		height: 200%;
+		height: 220%;
 		padding: 4% 4% 4% 4%;
 	}
 
@@ -792,6 +792,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 	form {
 		width: 90%;
+	}
+
+	#info p {
+		font-size: 100%;
 	}
 }
 
