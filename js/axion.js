@@ -44,8 +44,14 @@ $(document).ready(function () {
     if (isMobile == true) {
         $("#topVid").css({"width":"1px","height":"1px"});
         $("#topVid").remove();
+    } else if (uA.indexOf("Safari") > 0 && uA.indexOf("Chrome") < 0) {
+        $(".header").css("z-index","-1");
+        $(".slideB").css("padding-top","5%");
+        $("#mediaInfo").css("top","10%");
+        $("#who .w").css("font-weight","300");
+        $("#tunnelImg").css("height","100%");
+        $("#tunnel").css({"height":"100%","opacity":"0.2"});
     } else {
-        /*
         $.getScript("js/skrollr.min.js")
           .done(function( script, textStatus ) {
             console.log( textStatus );
@@ -54,8 +60,8 @@ $(document).ready(function () {
           .fail(function( jqxhr, settings, exception ) {
             console.log( exception );
         });
-        */
-        startSkrollr();
+        
+        //startSkrollr();
     };
 
     var s;
