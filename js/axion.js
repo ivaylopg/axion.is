@@ -29,7 +29,7 @@ $(document).ready(function () {
     // [ ] add "reblogged from" to site preview?
 
     
-    var isMobile = true;
+    var isMobile = false;
     var uA = navigator.userAgent;
 
     if (jQuery.browser.mobile == true) {

@@ -758,7 +758,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 
 	.slide {
-		height: 200%;
+		height: 220%;
 		padding: 4% 4% 4% 4%;
 	}
 
@@ -793,12 +793,28 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	form {
 		width: 90%;
 	}
+
+	#info p {
+		font-size: 100%;
+	}
+
+	#who p .w {
+		font-weight: 300;
+	}
 }
 
 @media only screen and (max-height : 568px) and (max-width : 568px){ 
 
 	.footer {
 		height: 50%;
+	}
+
+}
+
+@media only screen and (max-height : 400px) and (max-width : 568px){ 
+
+	.footer {
+		height: 70%;
 	}
 
 }
