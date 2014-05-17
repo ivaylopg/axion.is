@@ -803,7 +803,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-@media only screen and (max-height : 568px) and (max-width : 568px){ 
+@media only screen and (max-height : 568px) { 
 
 	.footer {
 		height: 50%;
@@ -811,7 +811,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 }
 
-@media only screen and (max-height : 400px) and (max-width : 568px){ 
+@media only screen and (max-height : 400px) { 
 
 	.footer {
 		height: 70%;
