@@ -32,6 +32,9 @@ $(document).ready(function () {
     var isMobile = false;
     var uA = navigator.userAgent;
 
+    var s;
+    var sActive;
+
     if (jQuery.browser.mobile == true) {
         isMobile = true;
     };
@@ -65,10 +68,9 @@ $(document).ready(function () {
         startSkrollr();
     };
 
-    
 
-    var s;
-    var sActive;
+
+    $(".tipNav").tooltip();
 
     function startSkrollr(){
         if (isMobile == false) {
@@ -429,8 +431,9 @@ if (isMobile == false) {
         $(".navLabel").html(labelTxt);
         $(".navLabel").css({"visibility":"visible","opacity":"1"});
       }, function() {
-        $(".navLabel").css({"opacity":"0","visibility":"hidden"});
-        $(".navLabel").html(" ");
+        $(".navLabel").css({"opacity":"0"});
+        //$(".navLabel").css({"opacity":"0","visibility":"hidden"});
+        //$(".navLabel").html(" ");
       }
     );
 
@@ -488,6 +491,32 @@ if (isMobile == false) {
                     document.getElementById('topVid').play();
                 };
             };
+
+            if (sActive == true) {
+                var p1 = s.relativeToAbsolute(document.getElementById('info'), 'top', 'top') - 100;
+                var p2 = s.relativeToAbsolute(document.getElementById('who'), 'top', 'top') - 100;
+                var p3 = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top') - 100;
+                var p4 = s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top') - 100;
+
+                $(".fNav").each(function() {
+                    $(this).css("color","#999");
+                });
+
+                if($(window).scrollTop() >= p1 && $(window).scrollTop() < p2) {
+                    $("#fNav1").css("color","#444");
+                } else if($(window).scrollTop() >= p2 && $(window).scrollTop() < p3) {
+                    $("#fNav2").css("color","#444");
+                } else if($(window).scrollTop() >= p3 && $(window).scrollTop() < p4) {
+                    $("#fNav3").css("color","#444");
+                } else if($(window).scrollTop() >= p4) {
+                    $("#fNav4").css("color","#444");
+                    $("#fNav5").css("color","#444");
+                }
+
+                //console.log($(window).scrollTop())
+
+            }
+
         };
     });
     
@@ -575,6 +604,9 @@ if (isMobile == false) {
             s.refresh();
             //s.refresh($("#blog"));
         }
+
+        var arrow = -3 * $("#arrowDown").height();
+        $("#arrowDown").css("margin-top",arrow);
     });
 
     $(window).load(function(){
@@ -615,9 +647,14 @@ if (isMobile == false) {
             bImage.src = "img/bgseq/" + i + ".jpg";
 
         };
+
+        var arrow = -3 * $("#arrowDown").height();
+        $("#arrowDown").css("margin-top",arrow);
         
         
     })
+
+    $("#arrowDown").hide().delay(5000).fadeIn(3000);
 
 
     
