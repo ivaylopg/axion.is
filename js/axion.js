@@ -24,7 +24,7 @@ $(document).ready(function () {
     // [ ] narrower BG images
     // [ ] clean up all code!
     // [x] make sure you are using mini versions of all js
-    // [ ] scroll-to as a function of where you are on the page....
+    // [ ] scroll-to speed as a function of where you are on the page....
     // [x] optimize for iphone
     // [ ] add "reblogged from" to site preview?
 
@@ -64,6 +64,8 @@ $(document).ready(function () {
         */
         startSkrollr();
     };
+
+    
 
     var s;
     var sActive;
@@ -198,6 +200,7 @@ $(document).ready(function () {
             // Probably don't need this here:
             if (isMobile == false && sActive == true) {
                 s.refresh();
+                s.refresh($("#blog"));
             }
         };
         
@@ -550,15 +553,63 @@ if (isMobile == false) {
         //var pos = Math.floor($("#blog").offset().top) + "px";
         //$("#blogContent").css("top",pos);
         //var hh = $("#blogContent").height();
-        //console.log(hh);
-    });
+        //console.log(window.innerHeight);
+        var winH = window.innerHeight;
+        var off3 = winH/1.78;
+        var off2 = winH/3.57;
+        var off1 = -1 * off3;
 
-    $(window).load(function(){
-        //s.refresh();
+        $(".bgHolder").each(function() {
+            //console.log(off1 + " | " + off2 + " | " + off3);
+
+            $(this).attr({
+              "data-bottom-top": "transform: translateY(" + off1 + "px); -ms-transform: translateY(" + off1 + "px); -webkit-transform: translateY(" + off1 + "px);",
+              "data-top-top": "transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);",
+              "data-center-bottom": "transform: translateY(" + off2 + "px); -ms-transform: translateY(" + off2 + "px); -webkit-transform: translateY(" + off2 + "px);",
+              "data-top-bottom": "transform: translateY(" + off3 + "px); -ms-transform: translateY(" + off3 + "px); -webkit-transform: translateY(" + off3 + "px);"
+            });
+
+        });
+
         if (isMobile == false) {
             s.refresh();
             //s.refresh($("#blog"));
         }
+    });
+
+    $(window).load(function(){
+        //s.refresh();
+
+        var winH = window.innerHeight;
+        var off3 = winH/1.78;
+        var off2 = winH/3.57;
+        var off1 = -1 * off3;
+
+        $(".bgHolder").each(function() {
+            //console.log(off1 + " | " + off2 + " | " + off3);
+
+            
+            $(this).attr({
+              "data-bottom-top": "transform: translateY(" + off1 + "px); -ms-transform: translateY(" + off1 + "px); -webkit-transform: translateY(" + off1 + "px);",
+              "data-top-top": "transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);",
+              "data-center-bottom": "transform: translateY(" + off2 + "px); -ms-transform: translateY(" + off2 + "px); -webkit-transform: translateY(" + off2 + "px);",
+              "data-top-bottom": "transform: translateY(" + off3 + "px); -ms-transform: translateY(" + off3 + "px); -webkit-transform: translateY(" + off3 + "px);"
+            });
+
+            /*
+            data-bottom-top="transform: translateY(-700px); -ms-transform: translateY(-700px); -webkit-transform: translateY(-700px);" 
+            data-top-top="transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);"  
+            data-center-bottom="transform: translateY(350px); -ms-transform: translateY(350px); -webkit-transform: translateY(350px);" 
+            data-top-bottom="transform: translateY(700px); -ms-transform: translateY(700px); -webkit-transform: translateY(700px);"
+            */
+
+        });
+
+        if (isMobile == false) {
+            s.refresh();
+            //s.refresh($("#blog"));
+        }
+
         for (var i = 1; i <= howManyPics; i++) {
             var bImage = new Image();
             bImage.src = "img/bgseq/" + i + ".jpg";
