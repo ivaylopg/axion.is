@@ -44,7 +44,7 @@ $(document).ready(function () {
     // [x] add correct quotes
     // [x] add footer to blog
     // [x] get rid of unused fonts
-    // [ ] add licence and credits to code
+    // [x] add licence and credits to code
     // [x] add legal footer to site
     // [x] footer images
     // [x] link to github
@@ -60,7 +60,6 @@ $(document).ready(function () {
     // [x] make sure you are using mini versions of all js
     // [ ] scroll-to speed as a function of where you are on the page....
     // [x] optimize for iphone
-    // [ ] add "reblogged from" to site preview?
 
     var arrowHidden = false;
     var isMobile = false;
