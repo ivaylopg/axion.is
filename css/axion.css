@@ -391,6 +391,7 @@ p {
 
 .slide3 .bgHolder {
 	background-image: url(../img/03.png);
+	height: 125%;
 }
 
 /* SLIDE BLOG */
