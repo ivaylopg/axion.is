@@ -1,23 +1,35 @@
 /*
     Copyright © 2014 Ivaylo Getov and the Axion Team
 
-    Website and application source code is released under the MIT licence. Images, audio, and video are released under Creative Commons BY-NC-SA. © 2014
+    Website and application source code is released under the MIT licence. 
+    Images, audio, and video are released under Creative Commons BY-NC-SA.
 
     Arrow Bottom by useiconic.com from The Noun Project
 
     MIT LICENCE
     ------------------
-    Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+    Permission is hereby granted, free of charge, to any person obtaining a 
+    copy of this software and associated documentation files (the "Software"), 
+    to deal in the Software without restriction, including without limitation 
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+    and/or sell copies of the Software, and to permit persons to whom the 
+    Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    The above copyright notice and this permission notice shall be included 
+    in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
     Creative Commons
     ------------------
-    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
-    
+    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
 */
 
 $(document).ready(function () {
@@ -675,6 +687,14 @@ if (isMobile == false) {
         
         
     })
+    
+    console.log(uA);
+    if (uA.indexOf("Safari") > 0 && uA.indexOf("Chrome") < 0) {
+        // This wasn't working in $(window).load() in Safari, for some reason,
+        // so I had to add it at the end of $(document).ready()
+        var arrow = -3 * $("#arrowDown").height();
+        $("#arrowDown").css("margin-top",arrow);
+    }
 
     $("#arrowDown").hide().delay(5000).fadeIn(3000);
 
