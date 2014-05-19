@@ -617,6 +617,9 @@ $(document).ready(function () {
         } else {
             startSkrollr();
         };
+
+        alert(isMobile);
+        alert(uA);
     };
 
     function startSkrollr(){
