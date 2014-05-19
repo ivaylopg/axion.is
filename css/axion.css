@@ -812,9 +812,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	top: 0px;
 	left: -400px;
 	opacity: 0;
-	visibility: hidden;
+	/*visibility: hidden;*/
 	width: 2px;
 	height: 2px;
+	overflow: hidden;
 }
 
 .slideContent {
