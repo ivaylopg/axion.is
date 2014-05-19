@@ -94,10 +94,18 @@ $(document).ready(function () {
     var value = 1;
     var picNo = 1;
 
+
+
     // Vars for video play/pause when hidden
-    var uVideo = s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top');
-    var vidElemJ = $("#topVid");
-    var vidElem = document.getElementById('topVid');
+    var uVideo;
+    var vidElemJ;
+    var vidElem;
+
+    if (isMobile == false) {
+        uVideo = s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top');
+        vidElemJ = $("#topVid");
+        vidElem = document.getElementById('topVid');
+    };
 
     // Vars for fixed Nav icons
     var sectionSet = false;
@@ -116,6 +124,7 @@ $(document).ready(function () {
     // bouncy arrow
     var arr = $("#arrowDown");
 
+
     // Soundmanager
     var clip1;
     var clip2;
@@ -124,6 +133,7 @@ $(document).ready(function () {
     var sm;
 
     
+
     /////////////////////////////////////////////////////
     // Render Blog Posts
     if (typeof tumblr_api_read !== 'undefined') {
@@ -195,14 +205,26 @@ $(document).ready(function () {
 
             $("#blogContent").css("visibility","visible");
 
-            $("#mediaInfo").css({
-              "width": "auto",
-              "left": "58%"
-            });
+            if (isMobile==false) {
+                $("#mediaInfo").css({
+                  "width": "auto",
+                  "left": "58%"
+                });
+            } else {
+                $("#mediaInfo").css({
+                  "width": "auto",
+                  "top": "0%"
+                });
+
+                var medH = $("#mediaInfo").height() * 1.25;
+
+                $("#blogContent").css("top", medH + "px");
+            };
+            
 
             if (isMobile == true) {
                 $(".slideB").css("padding-top","5%");
-                $("#mediaInfo").css("top","10%");
+                //$("#mediaInfo").css("top","10%");
             }
 
             if (isSafari == false) {
@@ -222,6 +244,11 @@ $(document).ready(function () {
         
     } else {
         console.log("TUMBLR IS UNDEFINED");
+        $("#mediaInfo").css({
+          "width": "30%",
+          "height": "auto",
+          "padding": "3% 10% 10% 3%"
+        });
     }
 
     /////////////////////////////////////////////////////
@@ -474,8 +501,8 @@ $(document).ready(function () {
 
         };
 
-        var arrow = -3 * $("#arrowDown").height();
-        $("#arrowDown").css("margin-top",arrow);
+        var arrow = -3 * arr.height();
+        arr.css("margin-top",arrow);
         
         
     })
@@ -628,19 +655,6 @@ $(document).ready(function () {
             s = skrollr.init({
                 forceHeight: false,
                 smoothScrolling: false,
-                constants: {
-                    blogTop: function() {
-                        return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
-                    },
-                    blogBottom: function() {
-                        return this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-                    },
-                    blogHeight: function() {
-                        var t = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'top');
-                        var b = this.relativeToAbsolute(document.getElementById('blog'), 'top', 'bottom');
-                        return b - t;
-                    }
-                },
                 easing: {
                     easeInQuad: function (p) { return p*p },
                     easeOutQuad: function (p) { return p*(2-p) },
@@ -761,16 +775,23 @@ $(document).ready(function () {
     /////////////////////////////////////////////////////
     // Executed after everything else on ready()
 
-    if (isSafari == true) {
+    if (isSafari == true || isMobile == true) {
         // This wasn't working in $(window).load() in Safari, for some reason,
         // so I had to add it at the end of $(document).ready()
-        var arrow = -3 * $("#arrowDown").height();
-        $("#arrowDown").css("margin-top",arrow);
+        var arrow = -3 * arr.height();
+        arr.css("margin-top",arrow);
     }
 
     if ($(window).scrollTop() < window.innerHeight/2) {
-        $("#arrowDown").hide().delay(5000).fadeIn(3000);
+        arr.hide().delay(5000).fadeIn(3000);
         arrowHidden == false;
+
+        if (isMobile == false) {
+            //
+        } else {
+            //
+        };
+        
     };
 
 
