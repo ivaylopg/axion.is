@@ -618,8 +618,8 @@ $(document).ready(function () {
             startSkrollr();
         };
 
-        alert(isMobile);
-        alert(uA);
+        //alert(isMobile);
+        //alert(uA);
     };
 
     function startSkrollr(){
