@@ -34,7 +34,8 @@
 
 $(document).ready(function () {
 
-    // [ ] Gif replacement of video for mobile
+    // [ ] Gif replacement of video for mobile 
+    // [ ] Fix wierd wiggle on iPhone Chrome?
     // [ ] Preload graphic for video?
     // [ ] buttons/logos over video
     // [ ] social media links?

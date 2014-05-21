@@ -322,11 +322,8 @@ p {
 .quote footer:before {
 	content: '\2014 \00A0';
 }
-/*
-.navbar-form input, .form-inline input {
-	width:auto;
-}
-*/
+
+
 
 .slide {
 	color: #fff;
@@ -335,6 +332,7 @@ p {
 	width: 100%;
 	height: 110%;
 	overflow: hidden;
+	background-color: #000;
 }
 
 .slide p {
