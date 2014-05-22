@@ -615,7 +615,7 @@ p {
 
 .medDynamicWidth {
 	/**/
-	width: 100%;
+	width: 50%;
 }
 
 /*
@@ -850,12 +850,12 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
 	.slideB {
 		padding: 10% 15% 5% 15%;
 	}
 
-	#mediaInfo .medDynamicWidth {
+	.medDynamicWidth {
 		width: 70%;
 	}
 }
