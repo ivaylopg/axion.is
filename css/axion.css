@@ -843,6 +843,12 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
+@media (max-width: 1024px) {
+	.slideB {
+		padding: 10% 15% 5% 15%;
+	}
+}
+
 @media (max-width: 800px) {
 	#arrowDown img {
 		width: 8%;
