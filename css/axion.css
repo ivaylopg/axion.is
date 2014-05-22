@@ -606,6 +606,7 @@ p {
 
 #mediaInfo {
 	/*width: 30%;*/
+	width: 100%;
 	height: auto;
 	display: block;
 	position: absolute;
@@ -613,7 +614,7 @@ p {
 }
 
 #mediaInfo .medDynamicWidth {
-	width: 100%;
+	
 }
 
 /*
