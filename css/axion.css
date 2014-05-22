@@ -613,7 +613,7 @@ p {
 	padding: 3% 10% 10% 3%;
 }
 
-#mediaInfo .medDynamicWidth {
+.medDynamicWidth {
 	/**/
 	width: 100%;
 }

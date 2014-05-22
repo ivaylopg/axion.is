@@ -253,7 +253,7 @@ $(document).ready(function () {
     } else {
         console.log("TUMBLR IS UNDEFINED");
         $("#mediaInfo").css({
-          "width": "30%",
+          "width": "80%",
           "height": "auto",
           "padding": "3% 10% 10% 3%"
         });
