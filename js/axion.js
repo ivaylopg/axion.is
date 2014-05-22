@@ -212,9 +212,11 @@ $(document).ready(function () {
                   "width": "auto",
                   "left": "58%"
                 });
+                $("#mediaInfo").removeClass("medDynamicWidth");
             } else {
-
-                $("#mediaInfo").addClass("medDynamicWidth");
+                $("#mediaInfo").css({
+                  "top": "0%"
+                });
                 /*
                 $("#mediaInfo").css({
                   "width": "50%",
