@@ -615,6 +615,7 @@ p {
 
 #mediaInfo .medDynamicWidth {
 	/**/
+	width: 70%;
 }
 
 /*
@@ -886,7 +887,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
 
-@media only screen and (max-width : 568px) { 
+@media (max-width : 568px) { 
 	#topNav {
 		visibility: hidden;
 	}
