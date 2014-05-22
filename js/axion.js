@@ -214,7 +214,7 @@ $(document).ready(function () {
                 });
             } else {
                 $("#mediaInfo").css({
-                  "width": "100%",
+                  "width": "50%",
                   "top": "0%"
                 });
 

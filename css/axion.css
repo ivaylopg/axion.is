@@ -611,6 +611,12 @@ p {
 	position: absolute;
 	padding: 3% 10% 10% 3%;
 }
+
+#mediaInfo .medDynamicWidth {
+	width: 50%;
+	top: 0%;
+}
+
 /*
 #mediaInfo {
 	width: auto;
@@ -847,6 +853,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	.slideB {
 		padding: 10% 15% 5% 15%;
 	}
+
+	#mediaInfo .medDynamicWidth {
+		width: 70%;
+	}
 }
 
 @media (max-width: 800px) {
@@ -858,6 +868,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 @media (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 	.slide {
 		padding: 4% 4% 4% 4%;
+	}
+
+	#mediaInfo .medDynamicWidth {
+		width: 92%;
 	}
 }
 
@@ -885,6 +899,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	.slide {
 		height: 220%;
 		padding: 4% 4% 4% 4%;
+	}
+
+	#mediaInfo .medDynamicWidth {
+		width: 92%;
 	}
 
 	.bgHolder {
