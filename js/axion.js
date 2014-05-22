@@ -213,10 +213,14 @@ $(document).ready(function () {
                   "left": "58%"
                 });
             } else {
+
+                $("#mediaInfo").addClass("medDynamicWidth");
+                /*
                 $("#mediaInfo").css({
                   "width": "50%",
                   "top": "0%"
                 });
+                */
 
                 var medH = $("#mediaInfo").height() * 1.25;
 
