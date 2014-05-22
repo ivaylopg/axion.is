@@ -42,6 +42,7 @@ $(document).ready(function () {
     // [ ] narrower BG images
     // [ ] clean up all code!
     // [ ] scroll-to speed as a function of where you are on the page....
+    // [ ] fix mobile chrome bs
     // [x] We still have to implement preload for the hallway!
     // [x] Add video and text posts for the blog
     // [x] Tumblr version of page
@@ -624,6 +625,7 @@ $(document).ready(function () {
 
         if (isMobile == true) {
             $("#topVid").css({"width":"1px","height":"1px"}).remove();
+            $("#who p .w").css("font-weight","300");
         } else if (isSafari == true) {
 
             $("#who p .w").css("font-weight","300");
