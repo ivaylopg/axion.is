@@ -625,6 +625,7 @@ $(document).ready(function () {
 
         if (isMobile == true) {
             $("#topVid").css({"width":"1px","height":"1px"}).remove();
+            $("#topNid").hide().remove();
             $("#who p .w").css("font-weight","300");
         } else if (isSafari == true) {
 
