@@ -208,11 +208,11 @@ $(document).ready(function () {
             $("#blogContent").css("visibility","visible");
 
             if (isMobile==false) {
+                $("#mediaInfo").removeClass("medDynamicWidth");
                 $("#mediaInfo").css({
                   "width": "auto",
                   "left": "58%"
                 });
-                $("#mediaInfo").removeClass("medDynamicWidth");
             } else {
                 $("#mediaInfo").css({
                   "top": "0%"
