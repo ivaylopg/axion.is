@@ -849,6 +849,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+	padding: 4% 4% 4% 4%;
+}
+
 @media (max-width: 400px) {
 	#arrowDown img {
 		width: 12%;
@@ -859,7 +863,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-/* *********************************************************** */
+
 @media only screen and (max-width : 568px) { 
 	#topNav {
 		visibility: hidden;
