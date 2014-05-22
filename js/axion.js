@@ -143,7 +143,7 @@ $(document).ready(function () {
         var postCount = 0;
         var maxPosts = 3;
 
-        if (uA.indexOf("iPhone") > 0 || uA.indexOf("iphone") > 0) {
+        if (uA.indexOf("iPhone") > 0 || uA.indexOf("iphone") > 0 || uA.indexOf("iPad") > 0 || uA.indexOf("ipad") > 0) {
             maxPosts = 2;
         } else if (isMobile == true) {
             maxPosts = 1;
@@ -627,6 +627,8 @@ $(document).ready(function () {
             $("#topVid").css({"width":"1px","height":"1px"}).remove();
             $("#topNav").hide().remove();
             $("#who p .w").css("font-weight","300");
+            $("#tunnel").removeAttr("data-top-top").removeAttr("data--100p-bottom-bottom").removeAttr("data-anchor-target").css({"height":"100%","opacity":"0.2"});
+            $("#tunnelImg").css("height","100%");
         } else if (isSafari == true) {
 
             $("#who p .w").css("font-weight","300");
