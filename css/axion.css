@@ -850,7 +850,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
 	.slideB {
 		padding: 10% 15% 5% 15%;
 	}
@@ -866,7 +866,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-@media (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+@media (max-width : 768px) {
 	.slide {
 		padding: 4% 4% 4% 4%;
 	}
