@@ -605,7 +605,7 @@ p {
 
 
 #mediaInfo {
-	width: 30%;
+	/*width: 30%;*/
 	height: auto;
 	display: block;
 	position: absolute;
