@@ -635,6 +635,7 @@ $(document).ready(function () {
             $("#who p .w").css("font-weight","300");
             $("#tunnel").removeAttr("data-top-top").removeAttr("data--100p-bottom-bottom").removeAttr("data-anchor-target").css({"height":"100%","opacity":"0.2"});
             $("#tunnelImg").css("height","100%");
+            $(".header").css("background-image","url('../img/intro2.gif')");
         } else if (isSafari == true) {
 
             $("#who p .w").css("font-weight","300");
