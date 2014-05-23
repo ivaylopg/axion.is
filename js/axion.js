@@ -134,6 +134,9 @@ $(document).ready(function () {
     var clip4;
     var sm;
 
+    var ldr = $("#loader");
+
+    arr.hide();
     
 
     /////////////////////////////////////////////////////
@@ -516,6 +519,7 @@ $(document).ready(function () {
             bImage.src = "img/bgseq/" + i + ".jpg";
 
         };
+
     })
 
     $(window).resize(function(){
@@ -611,10 +615,27 @@ $(document).ready(function () {
                 break;
         }
     });
+
+    
+    vidElemJ.on("canplay", function () {
+        //vidElem.play();
+        ldr.fadeOut(1500, function() {
+            ldr.remove();
+            showArrow();
+        });
+    });
+    
+
+    ldr.click( function(){
+        ldr.fadeOut(1000, function() {
+            ldr.remove();
+            showArrow();
+        });
+    });
     
 
     /////////////////////////////////////////////////////
-    // Global functions
+    // Global functions 
 
     function browserSpecific(){
         if (jQuery.browser.mobile == true) {
@@ -788,10 +809,28 @@ $(document).ready(function () {
         return outDate;
     };
 
+    function showArrow() {
+        if ($(window).scrollTop() < window.innerHeight/2 && arrowHidden === false) {
+            arr.hide().delay(5000).fadeIn(3000);
+            arrowHidden = false;
+        };
+    };
+
+
     
 
     /////////////////////////////////////////////////////
     // Executed after everything else on ready()
+
+    $(".header").waitForImages(function() {
+        // All descendant images have loaded, now slide up.
+        if (isMobile) {
+            ldr.fadeOut(1500, function() {
+                ldr.remove();
+                showArrow();
+            }); 
+        };
+    });
 
     if (isSafari == true || isMobile == true) {
         // This wasn't working in $(window).load() in Safari, for some reason,
@@ -800,18 +839,16 @@ $(document).ready(function () {
         arr.css("margin-top",arrow);
     }
 
-    if ($(window).scrollTop() < window.innerHeight/2) {
-        arr.hide().delay(5000).fadeIn(3000);
-        arrowHidden == false;
+    //showArrow();
 
-        if (isMobile == false) {
-            //
-        } else {
-            //
-        };
-        
+    if (ldr.css("display") != "none") {
+        setTimeout(function(){
+            ldr.fadeOut(1500, function() {
+                ldr.remove();
+                showArrow();
+            }); 
+        }, 10000);
     };
-
 
 });
 
