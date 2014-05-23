@@ -639,15 +639,62 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 		/*background-image: url(../img/03.png);*/
 		padding: 10% 15% 5% 30%;
 	}
-
-	.slideB {
-		padding: 10% 15% 5% 15%;
-	}
 }
 
-@media (max-width: 800px) {
-  .slideB {
-		padding: 10% 5% 5% 5%;
+/* *********************************************************** */
+@media only screen and (max-width : 568px) { 
+	#topNav {
+		visibility: hidden;
+	}
+
+	.quote {
+		font-size: 120%;
+		padding: 4% 4% 4% 4%;
+	}
+
+	.slide {
+		height: 220%;
+		padding: 4% 4% 4% 4%;
+	}
+
+	.bgHolder {
+		background-position: 30% 0%;
+	}
+
+	.slide2 .bgHolder {
+		background-position: 80% 0%;
+	}
+
+
+	#tunnel {
+		visibility: hidden;
+	}
+
+	.slideB {
+		height: auto;
+		background-image: url(../img/bgseq/1.jpg);
+		background-repeat: no-repeat;
+		background-position: 50% 0px;
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+	}
+
+	.footer {
+		padding: 1% 10% 2% 10%;
+	}
+
+	form {
+		width: 90%;
+	}
+
+	#info p {
+		font-size: 100%;
+	}
+
+	#who p .w {
+		font-weight: 300;
 	}
 }
 
@@ -660,7 +707,43 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	.slide1,
 	.slide2,
 	.slide3 {
-		padding-top: 10%;
+		height: 160%;
+		padding-top: 5%;
 	}
 }
 
+@media (max-height: 650px) and (min-width: 1024px) {
+
+	#topVid {
+	    margin: 9800px auto;
+	}
+
+}
+
+@media only screen and (max-height : 568px) { 
+
+	.footer {
+		min-height: 50%;
+	}
+
+	.slide1,
+	.slide2,
+	.slide3 {
+		height: 200%;
+	}
+
+}
+
+@media only screen and (max-height : 400px) { 
+
+	.footer {
+		min-height: 70%;
+	}
+
+	.slide1,
+	.slide2,
+	.slide3 {
+		height: 300%;
+	}
+
+}

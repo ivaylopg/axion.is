@@ -1,0 +1,365 @@
+/*
+    Copyright © 2014 Ivaylo Getov and the Axion Team
+
+    Website and application source code is released under the MIT licence. 
+    Images, audio, and video are released under Creative Commons BY-NC-SA.
+
+    Arrow Bottom by useiconic.com from The Noun Project
+
+    MIT LICENCE
+    ------------------
+    Permission is hereby granted, free of charge, to any person obtaining a 
+    copy of this software and associated documentation files (the "Software"), 
+    to deal in the Software without restriction, including without limitation 
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+    and/or sell copies of the Software, and to permit persons to whom the 
+    Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included 
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+    Creative Commons
+    ------------------
+    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+    
+*/
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	background-color: #000;	
+	font-size: 12px;
+}
+
+p {
+	font-weight: 300;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	font-size: 110%;
+}
+
+#skrollr-body {
+	/**/
+}
+
+.text {
+	display: block;
+	position: relative;
+	background-color: #FFF;
+}
+
+.slide {
+	color: #fff;
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 70%;
+	padding: 10% 15% 5% 45%;
+	overflow: hidden;
+	background-color: #000;
+}
+
+.slide p {
+	color: #fff;
+}
+
+
+.bgHolder {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 125%;
+	z-index: 0;
+	background-image: url(../img/03.png);
+	background-repeat: no-repeat;
+	background-position: 50% 0px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	/* Safari Fix */
+	-webkit-transform: translateZ(0);
+	-webkit-backface-visibility: hidden;
+	-webkit-perspective: 1000;
+}
+
+.clearBack {
+	display: block;
+	position: relative;
+	background-color: rgba(0,0,0,0.8);
+	padding: 20px;
+	z-index: 1;
+}
+
+#contact p,
+#info p {
+	font-weight: 400;
+	font-size: 110%;
+	color: #999;
+	letter-spacing: 1px;
+}
+
+#contact .b,
+#info .b {
+	text-transform: uppercase;
+	font-size: 120%;
+	line-height: 150%;
+	letter-spacing: 1.5px;
+	color: #fff;
+	font-weight: 300;
+}
+
+#contact .t,
+#info .t{
+	font-size: 100%;
+	color: #aaa;
+}
+
+#contact .w,
+#info .w {
+	color: #fff;
+	font-weight: 100;
+}
+
+#contact a {
+	font-weight: 300;
+	text-decoration: underline;
+	color: #fff;
+}
+
+#contact a:hover {
+	text-decoration: none;
+	color: #fff;
+}
+
+.footer {
+	color: #fff;
+	/*background-color: #1a1a1a;*/
+	background-color:rgb(26,26,26);
+	display: block;
+	position: relative;
+	width: 100%;
+	min-height: 30%;
+	height: auto;
+	padding: 1% 30% 2% 30%;
+}
+
+#possible {
+	text-transform: uppercase;
+	font-size: 130%;
+	font-weight: 100;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+.footer .smallPrint {
+	display: inline-block;
+	position: absolute;
+	color: #666;
+	font-size: 80%;
+	font-weight: 300;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	top: 90%;
+	left: 0%;
+	width: 100%;
+	text-align: center;
+}
+
+.logoImages {
+	display: inline-block;
+	width: 32%;
+	height: auto;
+	padding-left: 1%;
+}
+
+.logoImages img {
+	width: 100%;
+	height: auto;
+}
+
+form {
+display: inline-block;
+width: 60%;
+font-weight: 300;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+[type="email"] {
+  -moz-appearance:    textfield;
+  -webkit-appearance: textfield;
+  appearance: textfield;
+}
+
+.textEnter::-webkit-input-placeholder { /* WebKit browsers */
+  color:    #666;
+font-weight: 100;
+}
+.textEnter:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    #666;
+font-weight: 300;
+}
+.textEnter::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:    #666;
+font-weight: 300;
+}
+.textEnter:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:    #666;
+font-weight: 300;
+}
+
+#mc-embedded-subscribe-form .textEnter,
+#mc-embedded-subscribe-form .btn {
+border-radius: 0px;
+}
+
+#mc-embedded-subscribe-form .textEnter {
+/*width: 400px;*/
+font-weight: 500;
+background-color: #ccc;
+border-color: #999;
+}
+
+#mc-embedded-subscribe-form .textEnter:focus {
+  outline: 0;
+}
+
+#mc-embedded-subscribe-form .btn-default {
+color: #000;
+background-color: #ccc;
+border-color: #999;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+#mc-embedded-subscribe-form .btn-default:hover,
+#mc-embedded-subscribe-form .btn-default:focus,
+#mc-embedded-subscribe-form .btn-default:active,
+#mc-embedded-subscribe-form .btn-default.active,
+#mc-embedded-subscribe-form .open .dropdown-toggle.btn-default {
+color: #333;
+background-color: #aaa;
+border-color: #999;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+#mc-embedded-subscribe-form .btn-default:active,
+#mc-embedded-subscribe-form .btn-default.active,
+#mc-embedded-subscribe-form .open .dropdown-toggle.btn-default {
+background-image: none;
+font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+
+
+@media (max-width: 1500px) {
+	body {
+		font-size: 12px;
+	}
+
+	.slide {
+		padding: 10% 15% 5% 30%;
+	}
+}
+
+
+@media (max-width: 1024px) {
+	form {
+		width: 90%;
+	}
+}
+
+@media (max-width: 800px) {
+	.slide {
+		min-height: 70%;
+		height: auto;
+		padding: 4% 4% 4% 4%;
+	}
+}
+
+@media (max-width: 400px) {
+	#arrowDown img {
+		width: 12%;
+	}
+
+	#mediaInfo {
+		font-size: 80%;
+	}
+}
+
+/* *********************************************************** */
+@media only screen and (max-width : 568px) { 
+	#topNav {
+		visibility: hidden;
+	}
+
+	.quote {
+		font-size: 120%;
+		padding: 4% 4% 4% 4%;
+	}
+
+	.slide {
+		min-height: 70%;
+		height: auto;
+		padding: 4% 4% 4% 4%;
+	}
+
+	.bgHolder {
+		background-position: 30% 0%;
+	}
+
+	.footer {
+		padding: 1% 10% 2% 10%;
+	}
+}
+
+@media (max-height: 800px) {
+
+	body {
+		font-size: 11px;
+	}
+
+	.slide {
+		min-height: 70%;
+		height: auto;
+		padding-top: 5%;
+	}
+}
+
+@media only screen and (max-height : 568px) { 
+
+	.footer {
+		min-height: 50%;
+	}
+
+	.slide {
+		min-height: 70%;
+		height: auto;
+	}
+
+}
+
+@media only screen and (max-height : 400px) { 
+
+	.footer {
+		min-height: 70%;
+	}
+
+	.slide {
+		min-height: 70%;
+		height: auto;
+	}
+
+}
+
+
+

@@ -1,3 +1,38 @@
+/*
+    Copyright © 2014 Ivaylo Getov and the Axion Team
+
+    Website and application source code is released under the MIT licence. 
+    Images, audio, and video are released under Creative Commons BY-NC-SA.
+
+    Arrow Bottom by useiconic.com from The Noun Project
+
+    MIT LICENCE
+    ------------------
+    Permission is hereby granted, free of charge, to any person obtaining a 
+    copy of this software and associated documentation files (the "Software"), 
+    to deal in the Software without restriction, including without limitation 
+    the rights to use, copy, modify, merge, publish, distribute, sublicense, 
+    and/or sell copies of the Software, and to permit persons to whom the 
+    Software is furnished to do so, subject to the following conditions:
+
+    The above copyright notice and this permission notice shall be included 
+    in all copies or substantial portions of the Software.
+
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+    Creative Commons
+    ------------------
+    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+    To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+    
+*/
+
 html,
 body {
 	width: 100%;
@@ -6,6 +41,7 @@ body {
 
 body {
 	background-color: #000;	
+	font-size: 12px;
 }
 
 p {
@@ -58,7 +94,7 @@ p {
 #fixedNav {
 	display: block;
 	position: fixed;
-	top: 2%;
+	top: 3%;
 	left: 1%;
 	font-size: 128%;
 	color: #999;
@@ -102,6 +138,19 @@ p {
 	/*margin-top: -36px; Will be good for smaller screen*/
 	margin-top: -50px;
 }
+
+#navText {
+	font-size: 128%;
+	color: #999;
+	height: auto;
+	width: auto;
+	position: fixed;
+	top: 100%;
+	left: 2%;
+	/*margin-top: -36px; Will be good for smaller screen*/
+	margin-top: -70px;
+}
+
 #fixedNav .glyphicon,
 #topNav .glyphicon {
 	display: inline-block;
@@ -138,14 +187,74 @@ p {
 	-webkit-transition: opacity .15s ease-in;
 }
 
-/*
-#nav.affix {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index:10;
+#arrowDown {
+	width: 100%;
+	height: auto;
+	top: 100%;
+	margin-top: 0px;
+	position: fixed;
+	/*
+	filter: alpha(opacity=50);
+	-moz-opacity:0.5;
+	-khtml-opacity: 0.5;
+	opacity: 0.5;
+	*/
 }
-*/
+
+#arrowDown img {
+	display: block;
+	margin: 0 auto;
+	width: 5%;
+	height: auto;
+}
+
+@-webkit-keyframes POINT { 
+    0% { -webkit-transform: translateY(0px); } 
+    50% { -webkit-transform: translateY(30px); } 
+    100% { -webkit-transform: translateY(0px); } 
+} 
+
+@-moz-keyframes NAME-YOUR-ANIMATION {
+    0% { -moz-transform: translateY(0px); } 
+    50% { -moz-transform: translateY(30px); } 
+    100% { -moz-transform: translateY(0px); } 
+}
+
+@-o-keyframes NAME-YOUR-ANIMATION {
+    0% { -o-transform: translateY(0px); } 
+    50% { -o-transform: translateY(30px); } 
+    100% { -o-transform: translateY(0px); } 
+}
+
+@keyframes POINT {  
+    0% { transform: translateY(0px); } 
+    50% { transform: translateY(30px); } 
+    100% { transform: translateY(0px); } 
+} 
+.anim { 
+	-webkit-animation: POINT 4s infinite ease-in-out; /* Safari 4+ */
+	-moz-animation:    POINT 4s infinite ease-in-out; /* Fx 5+ */
+	-o-animation:      POINT 4s infinite ease-in-out; /* Opera 12+ */
+	animation:         POINT 4s infinite ease-in-out; /* IE 10+ */
+}
+
+.tooltip-inner{
+	width: auto;
+	font-family: 'Roboto', 'Helvetica', sans-serif;
+	font-weight: 500;
+	font-size: 110%;
+	text-align: left;
+	/*margin-left: -12px;*/
+	color: #999;
+	z-index: 3;
+	background-color: #333;
+	text-transform: uppercase;
+}
+
+.tooltip.right .tooltip-arrow {
+	border-right-color: #333;
+
+}
 
 
 .text {
@@ -213,11 +322,8 @@ p {
 .quote footer:before {
 	content: '\2014 \00A0';
 }
-/*
-.navbar-form input, .form-inline input {
-	width:auto;
-}
-*/
+
+
 
 .slide {
 	color: #fff;
@@ -226,6 +332,7 @@ p {
 	width: 100%;
 	height: 110%;
 	overflow: hidden;
+	background-color: #000;
 }
 
 .slide p {
@@ -277,11 +384,12 @@ p {
 	height: 70%;
 	/*background-image: url(../img/03.png);*/
 	padding: 10% 15% 5% 45%;
-	z-index: 3;
+	/*z-index: 3;*/
 }
 
 .slide3 .bgHolder {
 	background-image: url(../img/03.png);
+	height: 125%;
 }
 
 /* SLIDE BLOG */
@@ -497,12 +605,19 @@ p {
 
 
 #mediaInfo {
-	width: 30%;
+	/*width: 30%;*/
+	/*width: 100%;*/
 	height: auto;
 	display: block;
 	position: absolute;
 	padding: 3% 10% 10% 3%;
 }
+
+.medDynamicWidth {
+	/**/
+	width: 50%;
+}
+
 /*
 #mediaInfo {
 	width: auto;
@@ -589,7 +704,8 @@ p {
 	display: block;
 	position: relative;
 	width: 100%;
-	height: 30%;
+	min-height: 30%;
+	height: auto;
 	padding: 1% 30% 2% 30%;
 }
 
@@ -701,9 +817,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	top: 0px;
 	left: -400px;
 	opacity: 0;
-	visibility: hidden;
+	/*visibility: hidden;*/
 	width: 2px;
 	height: 2px;
+	overflow: hidden;
 }
 
 .slideContent {
@@ -733,21 +850,44 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-@media (max-height: 800px) {
-
-	body {
-		font-size: 11px;
+@media (max-width: 1025px) {
+	.slideB {
+		padding: 10% 15% 5% 15%;
 	}
 
-	.slide1,
-	.slide2,
-	.slide3 {
-		padding-top: 5%;
+	.medDynamicWidth {
+		width: 70%;
 	}
 }
 
-/* iPhones */
-@media only screen and (max-width : 568px) { 
+@media (max-width: 800px) {
+	#arrowDown img {
+		width: 8%;
+	}
+}
+
+@media (max-width : 770px) {
+	.slide {
+		padding: 4% 4% 4% 4%;
+	}
+
+	#mediaInfo .medDynamicWidth {
+		width: 92%;
+	}
+}
+
+@media (max-width: 400px) {
+	#arrowDown img {
+		width: 12%;
+	}
+
+	#mediaInfo {
+		font-size: 80%;
+	}
+}
+
+
+@media (max-width : 568px) { 
 	#topNav {
 		visibility: hidden;
 	}
@@ -760,6 +900,10 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	.slide {
 		height: 220%;
 		padding: 4% 4% 4% 4%;
+	}
+
+	#mediaInfo .medDynamicWidth {
+		width: 92%;
 	}
 
 	.bgHolder {
@@ -803,18 +947,52 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 	}
 }
 
-@media only screen and (max-height : 568px) and (max-width : 568px){ 
+@media (max-height: 800px) {
 
-	.footer {
-		height: 50%;
+	body {
+		font-size: 11px;
+	}
+
+	.slide1,
+	.slide2,
+	.slide3 {
+		height: 160%;
+		padding-top: 5%;
+	}
+}
+
+@media (max-height: 650px) and (min-width: 1024px) {
+
+	#topVid {
+	    margin: 9800px auto;
 	}
 
 }
 
-@media only screen and (max-height : 400px) and (max-width : 568px){ 
+@media only screen and (max-height : 568px) { 
 
 	.footer {
-		height: 70%;
+		min-height: 50%;
+	}
+
+	.slide1,
+	.slide2,
+	.slide3 {
+		height: 200%;
+	}
+
+}
+
+@media only screen and (max-height : 400px) { 
+
+	.footer {
+		min-height: 70%;
+	}
+
+	.slide1,
+	.slide2,
+	.slide3 {
+		height: 300%;
 	}
 
 }
