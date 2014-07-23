@@ -70,7 +70,15 @@
           
           <div id="topNav"><a href="#info" data-target="info" data-label="About"><span class="glyphicon glyphicon-info-sign"></span></a>&nbsp;<a href="#who" data-target="who" data-label="Credits"><span class="glyphicon glyphicon-user"></span></a>&nbsp;<a href="#blog" data-target="blog" data-label="News"><span class="glyphicon glyphicon-comment"></span></a>&nbsp;<a href="#contact" data-target="contact" data-label="Get Updates"><span class="glyphicon glyphicon-envelope"></span></a>&nbsp;<a href="#contact" data-target="contact" data-label="Download"><span class="glyphicon glyphicon-cloud-download"></span></a><div class="navLabel"></div></div><!--<div id="navText">Scroll down</div>-->
           <div id="arrowDown"><img src="img/arrowWhite.png" class="anim" /></div>
+          <div id="loader"></div>
     </div>
+
+    <!-- video preload curtain -->
+    <script type="text/javascript">
+      document.getElementById("loader").style.display = "block";
+      document.getElementById("loader").style.zIndex = "1";
+    </script>
+    <!-- end curtain -->
 
     <div id="underVideo" class="quote" data-bottom-top="background-color:rgb(100,100,100)" data-center-center="background-color:rgb(170,170,170);" data-smooth-scrolling="off">
       <div id="qc1" data-bottom-top="opacity: 0" data-center-top="opacity: 1" data-smooth-scrolling="off">
@@ -316,8 +324,9 @@
     <script type="text/javascript" src="js/soundmanager2.min.js"></script>
     <script type="text/javascript" src="js/jquery.knob.js"></script>
     <script type="text/javascript" src="js/jquery.fitvids.js"></script>
-    <script type="text/javascript" src="http://axionexperience.tumblr.com/api/read/json?jasoncallback=?&start=0&num=10"></script>
     <script type="text/javascript" src="js/skrollr.min.js"></script>
+    <script type="text/javascript" src="js/jquery.waitforimages.min.js"></script>
+    <script type="text/javascript" src="http://axionexperience.tumblr.com/api/read/json?jasoncallback=?&start=0&num=10"></script>
     <!-- Custom JS -->
     <script src="js/axion.js"></script>
   </body>
