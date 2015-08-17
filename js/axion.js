@@ -104,7 +104,7 @@ $(document).ready(function () {
     var vidElem;
 
     if (isMobile == false) {
-        uVideo = s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top');
+        //uVideo = s.relativeToAbsolute(document.getElementById('underVideo'), 'top', 'top');
         vidElemJ = $("#topVid");
         vidElem = document.getElementById('topVid');
     };
@@ -213,15 +213,15 @@ $(document).ready(function () {
             $("#blogContent").css("visibility","visible");
 
             if (isMobile==false) {
-                $("#mediaInfo").removeClass("medDynamicWidth");
-                $("#mediaInfo").css({
-                  "width": "auto",
-                  "left": "58%"
-                });
+                //$("#mediaInfo").removeClass("medDynamicWidth");
+                //$("#mediaInfo").css({
+                  //"width": "auto",
+                  //"left": "58%"
+                //});
             } else {
-                $("#mediaInfo").css({
-                  "top": "0%"
-                });
+               // $("#mediaInfo").css({
+                //  "top": "0%"
+                //});
                 /*
                 $("#mediaInfo").css({
                   "width": "50%",
@@ -241,17 +241,17 @@ $(document).ready(function () {
             }
 
             if (isSafari == false) {
-                $("#mediaInfo").attr({
-                  "data-top-top": "top: 2%;",
-                  "data-bottom-bottom": "top: 60%;",
-                  "data-anchor-target": "#blog"
-                });
+                // $("#mediaInfo").attr({
+                //   "data-top-top": "top: 2%;",
+                //   "data-bottom-bottom": "top: 60%;",
+                //   "data-anchor-target": "#blog"
+                // });
             };
 
             // Probably don't need this here:
             if (isMobile == false && sActive == true) {
-                s.refresh();
-                s.refresh($("#blog"));
+                //s.refresh();
+                //s.refresh($("#blog"));
             }
         };
         
@@ -504,13 +504,13 @@ $(document).ready(function () {
         var arrow = -3 * arr.height();
         arr.css("margin-top",arrow);
 
-        if (isMobile == true) {
+        if (true) {
             var mobBlogH = ($("#mediaInfo").height() + $("#blogContent").height()) * 1.2;
             $(".slideB").css({"height":mobBlogH + "px"});
         }
 
         if (isMobile == false) {
-            s.refresh();
+            //s.refresh();
             //s.refresh($("#blog"));
         }
 
@@ -561,7 +561,7 @@ $(document).ready(function () {
         }
 
         if (isMobile == false) {
-            s.refresh();
+            //s.refresh();
             //s.refresh($("#blog"));
         }
 
@@ -687,9 +687,9 @@ $(document).ready(function () {
                 $(this).css({"-webkit-transform":"translate3d(0,0,1px)","-webkit-backface-visibility":"hidden","-webkit-perspective":"1000"}).attr("data-smooth-scrolling","on");
             });
 
-            startSkrollr();
+            //startSkrollr();
         } else {
-            startSkrollr();
+            //startSkrollr();
         };
     };
 
@@ -753,14 +753,17 @@ $(document).ready(function () {
     }
 
     function sectionHeight(){
-        p1 = s.relativeToAbsolute(document.getElementById('info'), 'top', 'top') - 100;
-        p2 = s.relativeToAbsolute(document.getElementById('who'), 'top', 'top') - 100;
-        p3 = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top') - 100;
-        p4 = s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top') - 200;
-        sectionSet = true;
+        // p1 = s.relativeToAbsolute(document.getElementById('info'), 'top', 'top') - 100;
+        // p2 = s.relativeToAbsolute(document.getElementById('who'), 'top', 'top') - 100;
+        // p3 = s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top') - 100;
+        // p4 = s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top') - 200;
+        // sectionSet = true;
     };
 
     function blogDate(dString) {
+        if (dString == "Sun, 16 Aug 2015 21:37:54") {
+            dString = "Wed, 01 Jul 2015 21:37:54"
+        };
         var month = "";
         var numDay =""; 
         if (dString.charAt(5) == 0) {
@@ -854,7 +857,7 @@ $(document).ready(function () {
                 ldr.remove();
                 showArrow();
             }); 
-        }, 10000);
+        }, 3000);
     };
 
 });
