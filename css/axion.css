@@ -1,36 +1,36 @@
 /*
     Copyright © 2014 Ivaylo Getov and the Axion Team
 
-    Website and application source code is released under the MIT licence. 
+    Website and application source code is released under the MIT licence.
     Images, audio, and video are released under Creative Commons BY-NC-SA.
 
     Arrow Bottom by useiconic.com from The Noun Project
 
     MIT LICENCE
     ------------------
-    Permission is hereby granted, free of charge, to any person obtaining a 
-    copy of this software and associated documentation files (the "Software"), 
-    to deal in the Software without restriction, including without limitation 
-    the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-    and/or sell copies of the Software, and to permit persons to whom the 
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the
     Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice shall be included 
+    The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
-    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
     Creative Commons
     ------------------
-    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
     To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
-    
+
 */
 
 html,
@@ -40,7 +40,7 @@ body {
 }
 
 body {
-	background-color: #000;	
+	background-color: #000;
 	font-size: 12px;
 }
 
@@ -91,17 +91,17 @@ p {
     left: -9999px;
     right: -9999px;
     margin: auto;
-	min-width: 100%; 
-	min-height: 100%; 
-	width: auto; 
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
 	height: auto;
 }
 
 #topImg {
 	position: fixed;
-	min-width: 100%; 
-	min-height: 100%; 
-	width: auto; 
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
 	height: auto;
 	z-index: -1;
 }
@@ -152,7 +152,7 @@ p {
 	left: 2%;
 	/*margin-top: -36px; Will be good for smaller screen*/
 	margin-top: -50px;
-	z-index: 2;
+	z-index: 5;
 }
 
 #navText {
@@ -224,30 +224,30 @@ p {
 	height: auto;
 }
 
-@-webkit-keyframes POINT { 
-    0% { -webkit-transform: translateY(0px); } 
-    50% { -webkit-transform: translateY(30px); } 
-    100% { -webkit-transform: translateY(0px); } 
-} 
+@-webkit-keyframes POINT {
+    0% { -webkit-transform: translateY(0px); }
+    50% { -webkit-transform: translateY(30px); }
+    100% { -webkit-transform: translateY(0px); }
+}
 
 @-moz-keyframes NAME-YOUR-ANIMATION {
-    0% { -moz-transform: translateY(0px); } 
-    50% { -moz-transform: translateY(30px); } 
-    100% { -moz-transform: translateY(0px); } 
+    0% { -moz-transform: translateY(0px); }
+    50% { -moz-transform: translateY(30px); }
+    100% { -moz-transform: translateY(0px); }
 }
 
 @-o-keyframes NAME-YOUR-ANIMATION {
-    0% { -o-transform: translateY(0px); } 
-    50% { -o-transform: translateY(30px); } 
-    100% { -o-transform: translateY(0px); } 
+    0% { -o-transform: translateY(0px); }
+    50% { -o-transform: translateY(30px); }
+    100% { -o-transform: translateY(0px); }
 }
 
-@keyframes POINT {  
-    0% { transform: translateY(0px); } 
-    50% { transform: translateY(30px); } 
-    100% { transform: translateY(0px); } 
-} 
-.anim { 
+@keyframes POINT {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(30px); }
+    100% { transform: translateY(0px); }
+}
+.anim {
 	-webkit-animation: POINT 4s infinite ease-in-out; /* Safari 4+ */
 	-moz-animation:    POINT 4s infinite ease-in-out; /* Fx 5+ */
 	-o-animation:      POINT 4s infinite ease-in-out; /* Opera 12+ */
@@ -389,6 +389,7 @@ p {
 .slide2 {
 	/*background-image: url(../img/02.png);*/
 	padding: 10% 45% 5% 15%;
+  height: auto;
 }
 
 .slide2 .bgHolder {
@@ -508,7 +509,7 @@ p {
 }
 
 #tunnelImg {
-	width: 100%; 
+	width: 100%;
 	height: auto;
 	z-index: 1;
 	visibility: hidden;
@@ -904,7 +905,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 }
 
 
-@media (max-width : 568px) { 
+@media (max-width : 568px) {
 	#topNav {
 		visibility: hidden;
 	}
@@ -986,7 +987,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 }
 
-@media only screen and (max-height : 568px) { 
+@media only screen and (max-height : 568px) {
 
 	.footer {
 		min-height: 50%;
@@ -1000,7 +1001,7 @@ font-family: 'Roboto', 'Helvetica', sans-serif;
 
 }
 
-@media only screen and (max-height : 400px) { 
+@media only screen and (max-height : 400px) {
 
 	.footer {
 		min-height: 70%;

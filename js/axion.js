@@ -1,40 +1,40 @@
 /*
     Copyright © 2014 Ivaylo Getov and the Axion Team
 
-    Website and application source code is released under the MIT licence. 
+    Website and application source code is released under the MIT licence.
     Images, audio, and video are released under Creative Commons BY-NC-SA.
 
     Arrow Bottom by useiconic.com from The Noun Project
 
     MIT LICENCE
     ------------------
-    Permission is hereby granted, free of charge, to any person obtaining a 
-    copy of this software and associated documentation files (the "Software"), 
-    to deal in the Software without restriction, including without limitation 
-    the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-    and/or sell copies of the Software, and to permit persons to whom the 
+    Permission is hereby granted, free of charge, to any person obtaining a
+    copy of this software and associated documentation files (the "Software"),
+    to deal in the Software without restriction, including without limitation
+    the rights to use, copy, modify, merge, publish, distribute, sublicense,
+    and/or sell copies of the Software, and to permit persons to whom the
     Software is furnished to do so, subject to the following conditions:
 
-    The above copyright notice and this permission notice shall be included 
+    The above copyright notice and this permission notice shall be included
     in all copies or substantial portions of the Software.
 
-    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS 
-    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL 
-    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER 
-    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, 
+    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS
+    OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+    THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
     OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
     Creative Commons
     ------------------
-    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License. 
+    This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
     To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
 */
 
 $(document).ready(function () {
 
-    // [ ] Gif replacement of video for mobile 
+    // [ ] Gif replacement of video for mobile
     // [ ] Fix wierd wiggle on iPhone Chrome?
     // [ ] Preload graphic for video?
     // [ ] buttons/logos over video
@@ -78,7 +78,7 @@ $(document).ready(function () {
     // Do this before declaring rest of variables:
     browserSpecific();
 
-    // Hallway vars to keep track of 
+    // Hallway vars to keep track of
     // which hallway image is active
 
     var tunImg = $('#tunnelImg');
@@ -139,7 +139,7 @@ $(document).ready(function () {
 
     arr.hide();
 
-    
+
 
     /////////////////////////////////////////////////////
     // Render Blog Posts
@@ -163,7 +163,7 @@ $(document).ready(function () {
                     var formatDate = blogDate(tumblr_api_read.posts[i]["date"]);
 
                     var post = '<div class="blogEntry"><span class="blogDate"><a href="' + tumblr_api_read.posts[i]["url"] + '"target="_blank">' + formatDate + '</a></span><div class="divider"></div>';
-                    
+
                     // Photo Post //
                     if (kind == "photo") {
                         post = post + '<div class="blogImg"><img src="' + tumblr_api_read.posts[i]["photo-url-1280"] + '" /></div>';
@@ -196,7 +196,7 @@ $(document).ready(function () {
                     blogData = blogData + post;
                     postCount++;
                 };
-            };              
+            };
         };
         // Create the blog posts
         if (postCount >= 1) {
@@ -233,7 +233,7 @@ $(document).ready(function () {
 
                 $("#blogContent").css("top", medH + "px");
             };
-            
+
 
             if (isMobile == true) {
                 $(".slideB").css("padding-top","5%");
@@ -254,7 +254,7 @@ $(document).ready(function () {
                 //s.refresh($("#blog"));
             }
         };
-        
+
     } else {
         console.log("TUMBLR IS UNDEFINED");
         $("#mediaInfo").css({
@@ -352,7 +352,7 @@ $(document).ready(function () {
 
     };
 
-    
+
     /////////////////////////////////////////////////////
     // Misc things to do when site starts
 
@@ -370,7 +370,7 @@ $(document).ready(function () {
     $(".vidCover").on("play", function(){
         $(this).attr("poster","");
     });
-    
+
     if (isMobile == false) {
         // get rid of status bar for the initial navigation links (becasue they're so close to the bottom it gets in the way)
         $("#topNav a").each(function() {
@@ -386,25 +386,29 @@ $(document).ready(function () {
             //console.log(d);
 
             if (d=="#info") {
-                s.animateTo(s.relativeToAbsolute(document.getElementById('info'), 'top', 'top'), {duration: 1500, easing: "easeInOutQuart"});
+                //s.animateTo(s.relativeToAbsolute(document.getElementById('info'), 'top', 'top'), {duration: 1500, easing: "easeInOutQuart"});
+                $("body").animate({ scrollTop: $(d).position().top}, 1500);
             } else if (d=="#who") {
-                s.animateTo(s.relativeToAbsolute(document.getElementById('who'), 'top', 'top'), {duration: 3000, easing: "easeInOutQuart"});
+                //s.animateTo(s.relativeToAbsolute(document.getElementById('who'), 'top', 'top'), {duration: 3000, easing: "easeInOutQuart"});
+                $("body").animate({ scrollTop: $(d).position().top}, 3000);
             } else if (d=="#blog") {
-                s.animateTo(s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top'), {duration: 4500, easing: "easeInOutQuart"});
+                //s.animateTo(s.relativeToAbsolute(document.getElementById('blog'), 'top', 'top'), {duration: 4500, easing: "easeInOutQuart"});
+                $("body").animate({ scrollTop: $(d).position().top}, 4500);
             } else if (d=="#contact") {
-                s.animateTo(s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top'), {duration: scrollTime, easing: "easeInOutQuart"});
+                //s.animateTo(s.relativeToAbsolute(document.getElementById('contact'), 'top', 'top'), {duration: scrollTime, easing: "easeInOutQuart"});
+                $("body").animate({ scrollTop: $(d).position().top}, scrollTime);
             }
-        }); 
+        });
     };
 
 
 
 
     /////////////////////////////////////////////////////
-    // Event listeners   
+    // Event listeners
     $(window).scroll(function(){
         if (isMobile == false) {
-        
+
             var posFromTop;
             var totHeight;
 
@@ -443,11 +447,11 @@ $(document).ready(function () {
                 };
             };
 
-            
+
             if (sActive == true && sectionSet == true) {
 
                 n0.css("color","#999");
-                
+
                 if($(window).scrollTop() >= p1 && $(window).scrollTop() < p2) {
                     n1.css("color","#444");
                 } else if($(window).scrollTop() >= p2 && $(window).scrollTop() < p3) {
@@ -459,7 +463,7 @@ $(document).ready(function () {
                     n5.css("color","#444");
                 }
             }
-        
+
 
             if ($(window).scrollTop() > window.innerHeight/2 && arrowHidden == false) {
                 arrowHidden = true;
@@ -481,8 +485,8 @@ $(document).ready(function () {
             $(".bgHolder").each(function() {
                 //console.log(off1 + " | " + off2 + " | " + off3);
 
-                
-                
+
+
                 $(this).attr({
                   "data-bottom-top": "transform: translateY(" + off1 + "px); -ms-transform: translateY(" + off1 + "px); -webkit-transform: translateY(" + off1 + "px);",
                   "data-top-top": "transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);",
@@ -491,9 +495,9 @@ $(document).ready(function () {
                 });
 
                 /*
-                data-bottom-top="transform: translateY(-700px); -ms-transform: translateY(-700px); -webkit-transform: translateY(-700px);" 
-                data-top-top="transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);"  
-                data-center-bottom="transform: translateY(350px); -ms-transform: translateY(350px); -webkit-transform: translateY(350px);" 
+                data-bottom-top="transform: translateY(-700px); -ms-transform: translateY(-700px); -webkit-transform: translateY(-700px);"
+                data-top-top="transform: translateY(0px); -ms-transform: translateY(0px); -webkit-transform: translateY(0px);"
+                data-center-bottom="transform: translateY(350px); -ms-transform: translateY(350px); -webkit-transform: translateY(350px);"
                 data-top-bottom="transform: translateY(700px); -ms-transform: translateY(700px); -webkit-transform: translateY(700px);"
                 */
 
@@ -515,7 +519,7 @@ $(document).ready(function () {
         }
 
         sectionHeight();
-        
+
 
         for (var i = 1; i <= howManyPics; i++) {
             var bImage = new Image();
@@ -587,7 +591,7 @@ $(document).ready(function () {
         switch (w) {
             case "clip1":
                 if(clip1.playState != 1) {
-                    clip1.play();    
+                    clip1.play();
                 } else {
                     clip1.togglePause();
                 }
@@ -595,7 +599,7 @@ $(document).ready(function () {
                 break;
             case "clip2":
                 if(clip2.playState != 1) {
-                    clip2.play();    
+                    clip2.play();
                 } else {
                     clip2.togglePause();
                 }
@@ -603,7 +607,7 @@ $(document).ready(function () {
                 break;
             case "clip3":
                 if(clip3.playState != 1) {
-                    clip3.play();    
+                    clip3.play();
                 } else {
                     clip3.togglePause();
                 }
@@ -611,7 +615,7 @@ $(document).ready(function () {
                 break;
             case "clip4":
                 if(clip4.playState != 1) {
-                    clip4.play();    
+                    clip4.play();
                 } else {
                     clip4.togglePause();
                 }
@@ -620,7 +624,7 @@ $(document).ready(function () {
         }
     });
 
-    
+
     if (isMobile === false) {
         vidElemJ.on("canplay", function () {
             //vidElem.play();
@@ -637,10 +641,10 @@ $(document).ready(function () {
             showArrow();
         });
     });
-    
+
 
     /////////////////////////////////////////////////////
-    // Global functions 
+    // Global functions
 
     function browserSpecific(){
         if (jQuery.browser.mobile == true) {
@@ -679,7 +683,7 @@ $(document).ready(function () {
 
             $("#blog").css({"-webkit-transform":"translate3d(0,0,1px)","-webkit-backface-visibility":"hidden","-webkit-perspective":"1000"}).attr("data-smooth-scrolling","on");
             $("#mediaInfo").css("top","10%");
-            
+
             $(".slide").each(function(){
                 $(this).css({"-webkit-transform":"translate3d(0,0,1px)","-webkit-backface-visibility":"hidden","-webkit-perspective":"1000"}).attr("data-smooth-scrolling","on");
             });
@@ -765,7 +769,7 @@ $(document).ready(function () {
             dString = "Wed, 01 Jul 2015 21:37:54"
         };
         var month = "";
-        var numDay =""; 
+        var numDay ="";
         if (dString.charAt(5) == 0) {
             numDay = String(dString.charAt(6))
         } else {
@@ -827,7 +831,7 @@ $(document).ready(function () {
     };
 
 
-    
+
 
     /////////////////////////////////////////////////////
     // Executed after everything else on ready()
@@ -838,7 +842,7 @@ $(document).ready(function () {
             ldr.fadeOut(1500, function() {
                 ldr.remove();
                 showArrow();
-            }); 
+            });
         };
     });
 
@@ -856,7 +860,7 @@ $(document).ready(function () {
             ldr.fadeOut(1500, function() {
                 ldr.remove();
                 showArrow();
-            }); 
+            });
         }, 3000);
     };
 
